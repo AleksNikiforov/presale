@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h6 style="margin-left:20px; font-weight: bold; cursor: pointer;" >В расчет добавлены следующие записи:</h6>
+
+    <body>
+        <table style="border-collapse: collapse; margin-left:20px;">
+            <thead>
+              <tr>
+                <th style="border: 1px solid black; text-align: center;">Наименование</th>
+                <th style="border: 1px solid black; text-align: center; width: 30%;">Трудозатраты, дней</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for data in perechen %}
+              <tr>
+                <td style="border: 1px solid black;">{{data.name}}</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.days|default_if_none:''}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </body>
+    <h6 style="margin-left:20px; margin-top:20px; font-weight: bold; cursor: pointer;" >Если передумал, данные можно стереть</h6>
+
+</div>
+<a style="margin-top:5px; margin-left:20px;" class="btn btn-danger" href='delete'>Стереть</a>
+</div>
+
+
+    {% endblock %} 

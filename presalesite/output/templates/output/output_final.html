@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h6 style="margin-left:20px; font-weight: bold; cursor: pointer;" >Итоговое КП:</h6>
+
+    <body>
+        <table style="border-collapse: collapse; margin-left:20px; margin-right:20px;">
+            <thead>
+              <tr>
+                <th style="border: 1px solid black; text-align: center; width: 5%;">№ п/п</th>
+                <th style="border: 1px solid black; text-align: center; width: 30%;">Наименование</th>
+                <th style="border: 1px solid black; text-align: center; width: 10%;">Сумма с НДС, руб</th>
+                <th style="border: 1px solid black; text-align: center; width: 10%;">Длительность, дней</th>
+                <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты PERSON, дней</th>
+                <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты МП, дней</th>
+                <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты РТД, дней</th>
+                <th style="border: 1px solid black; text-align: center; width: 30%;">Комментарий</th>
+              </tr>
+            </thead>
+            <tbody>
+
+
+              {% with number=1 %}
+              {% for dict in perechen %}
+                   {% for data in dict %}
+              <tr>
+                {% if data.days is not None %}
+                <td style="border: 1px solid black; text-align: center;">{{number}}</td>
+                {% with number=number|add:1 %}
+                {% endwith %}
+                {% else %}
+                <td style="border: 1px solid black;">{{''}}</td>
+                {% endif %}
+                <td style="border: 1px solid black;">{{data.name}}</td>
+                <td style="border: 1px solid black;">{{summa_s_nds}}</td>
+                <td style="border: 1px solid black;">{{duration}}</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.days|default_if_none:''}}</td>
+                <td style="border: 1px solid black;">{{manager}}</td>
+                <td style="border: 1px solid black;">{{rtd}}</td>
+                <td style="border: 1px solid black;">{{comment}}</td>
+              </tr>
+                   {% endfor %}
+              {% endfor %}
+              {% endwith %}
+            </tbody>
+          </table>
+    </body>
+    <h6 style="margin-left:20px; margin-top:20px; font-weight: bold; cursor: pointer;" >Данное КП можно скачать</h6>
+
+</div>
+<a style="margin-top:5px; margin-left:20px;" class="btn btn-success" href=''>Скачать в формате Excel</a>
+</div>
+
+
+    {% endblock %} 

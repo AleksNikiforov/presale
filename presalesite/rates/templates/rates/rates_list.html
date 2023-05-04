@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+	  {% block content %}
+
+      <form method="POST" onsubmit="return validateForm();">
+        {% csrf_token %}
+
+            <details>
+                <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
+                >Необходимо выбрать, кто будет производить работы: инженер или архитектор
+                </summary>
+            <ul>
+              <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Инженер" value="Инженер">
+                    Инженер
+                  </summary>
+                </li>
+              <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Архитектор" value="Архитектор">
+                    Архитектор
+                  </summary>
+              </li>
+            </ul>
+        </details>
+
+        <details>
+            <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
+            >Необходимо скорректировать стоимость одного рабочего дня каждого из специалистов если это необоходимо (выставлены значения по умолчнию): 
+            </summary>
+        <ul>
+          <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                Инженер    
+                <input style="width: 100px; text-align: right;" type="number" step="0.1" id="Инженер" name="Инженер" value="20400.00"/>
+                <label for="float-input" style="margin-left:1px;">руб.</label>
+              </summary>
+            </li>
+
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                Архитектор
+                <input style="width: 100px; text-align: right;" type="number" step="0.1" id="Архитектор" name="Архитектор" value="25400.00"/>
+                <label for="float-input" style="margin-left:1px;">руб.</label>
+              </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                Менеджер проекта
+                <input style="width: 100px; text-align: right;" type="number" step="0.1" id="Менеджер проекта" name="Менеджер проекта" value="20400.00"/>
+                <label for="float-input" style="margin-left:1px;">руб.</label>
+              </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                Разработчик технической документации
+                <input style="width: 100px; text-align: right;" type="number" step="0.1" id="Разработчик технической документации" name="Разработчик технической документации" value="16400.00"/>
+                <label for="float-input" style="margin-left:1px;">руб.</label>
+              </summary>
+          </li>
+        </ul>
+    </details>
+
+    <details>
+        <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
+        >Необходимо скорректировать коэффициент сложности проекта если это необоходимо (выставлены значения по умолчнию): 
+        </summary>
+    <ul>
+      <li>
+        <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            Менеджер проекта
+            <input style="width: 60px; text-align: right;" type="number" step="0.1" id="Менеджер проекта коэффициент" name="Менеджер проекта коэффициент" value="0.3"/>
+            <label for="float-input" style="margin-left:1px;"></label>
+          </summary>
+      </li>
+      <li>
+        <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            Разработчик технической документации
+            <input style="width: 60px; text-align: right;" type="number" step="0.1" id="Разработчик технической документации коэффициент" name="Разработчик технической документации коэффициент" value="0.3"/>
+            <label for="float-input" style="margin-left:1px;"></label>
+          </summary>
+      </li>
+    </ul>
+    <summary style="margin-left:30px; font-weight:900; cursor: pointer;"
+    >Данный коэффициент указывает на количество часов специалистов по отношению к одному часу инженера/архитектора 
+    </summary>
+</details>
+  
+	  <input type="hidden" id="checked-items" name="checked_items">
+	  <button style="margin-left:50px;" type="submit" onclick="submitForm(); validateForm();" class="btn btn-primary">Добавить в Расчет</button>
+	</div>
+	<a style="margin-left:20px;" class="btn btn-danger" href='delete'>Очистить</a>
+	</div>
+	</form>
+
+
+    <script>
+        function submitForm() {
+            var checkedItems = [];
+            var checkboxes = document.querySelectorAll('.list-item-checkbox:checked');
+            checkboxes.forEach(function(checkbox) {
+                checkedItems.push(checkbox.value);
+            });
+            document.getElementById('checked-items').value = checkedItems;
+            document.getElementById('list-form').submit();
+        }
+
+        function validateForm() {
+          // Get the checkboxes by name attribute
+          let engineerCheckboxes = document.getElementsByName('Инженер');
+          let architectCheckboxes = document.getElementsByName('Архитектор');
+          let isEngineerChecked = false;
+          let isArchitectChecked = false;
+          // Loop through the checkboxes and check if at least one is checked
+          for (let i = 0; i < engineerCheckboxes.length; i++) {
+              if (engineerCheckboxes[i].checked) {
+                  isEngineerChecked = true;
+                  break;
+              }
+          }
+          for (let i = 0; i < architectCheckboxes.length; i++) {
+              if (architectCheckboxes[i].checked) {
+                  isArchitectChecked = true;
+                  break;
+              }
+          }
+          // If no checkbox is checked, show an error message
+          if (!isEngineerChecked && !isArchitectChecked) {
+              alert('Необходимо выбрать, кто будет производить работы: инженер или архитектор');
+              return false;
+          }
+          if (isEngineerChecked && isArchitectChecked) {
+            alert('Необходимо выбрать, кто будет производить работы: только инженер или только архитектор');
+            return false;
+        }
+          // If at least one checkbox is checked, submit the form
+          return true;
+      }
+      </script>
+
+
+	  {% endblock %}

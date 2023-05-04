@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h6 style="margin-left:20px; font-weight: bold; cursor: pointer;" >Для расчет будут использованы следующие значения:</h6>
+
+    <body>
+        <table style="border-collapse: collapse; margin-left:20px;">
+            <thead>
+              <tr>
+                <th style="border: 1px solid black; text-align: center;">Исполнитель работ</th>
+                <th style="border: 1px solid black; text-align: center; width: 30%;">Стоимость одного дня, руб.</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for data in perechen %}
+              <tr>
+                <td style="border: 1px solid black; text-align: center;">{{data.person}}</td>
+                {% if data.person == "Инженер" %}
+                <td style="border: 1px solid black; text-align: center;" >{{data.engineer_cost}}</td>
+                {% elif data.person == "Архитектор" %}
+                <td style="border: 1px solid black; text-align: center;" >{{data.architect_cost}}</td>
+                {% endif %}
+              </tr>
+              <tr>
+                <td style="border: 1px solid black; text-align: center;">Менеджер проекта</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.manager_cost}}</td>
+              </tr>
+            </tr>
+            <tr>
+              <td style="border: 1px solid black; text-align: center;">Разработчик технической документации</td>
+              <td style="border: 1px solid black; text-align: center;" >{{data.tech_writer_cost}}</td>
+            </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table style="border-collapse: collapse; margin-left:20px; margin-top: 20px;">
+            <thead>
+              <tbody>
+              {% for data in perechen %}
+              <tr>
+                <th style="border: 1px solid black; text-align: center; width: 55%;">Исполнитель работ</th>
+                <th style="border: 1px solid black; text-align: center; width: 40%;">Количество часов на 1 час работы {{data.person}}а</th>
+              </tr>
+            </thead>
+              <tr>
+                <td style="border: 1px solid black; text-align: center;">Менеджер проекта</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.manager_coef}}</td>
+              </tr>
+            </tr>
+            <tr>
+              <td style="border: 1px solid black; text-align: center;">Разработчик технической документации</td>
+              <td style="border: 1px solid black; text-align: center;" >{{data.tech_writer_coef}}</td>
+            </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          
+
+    </body>
+    <h6 style="margin-left:20px; margin-top:20px; font-weight: bold; cursor: pointer;" >Если передумал, данные можно стереть</h6>
+
+</div>
+<a style="margin-top:5px; margin-left:20px;" class="btn btn-danger" href='delete'>Стереть</a>
+</div>
+
+
+    {% endblock %} 
