@@ -13,7 +13,7 @@
                 <th style="border: 1px solid black; text-align: center; width: 30%;">Наименование</th>
                 <th style="border: 1px solid black; text-align: center; width: 10%;">Сумма с НДС, руб</th>
                 <th style="border: 1px solid black; text-align: center; width: 10%;">Длительность, дней</th>
-                <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты {{perechen.0.person}}, дней</th>
+                <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты {{perechen.0.0.person}}, дней</th>
                 <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты МП, дней</th>
                 <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты РТД, дней</th>
                 <th style="border: 1px solid black; text-align: center; width: 30%;">Комментарий</th>
@@ -23,7 +23,8 @@
 
 
 
-              {% for data in perechen %}
+              {% for dict in perechen %}
+                   {% for data in dict %}
               <tr>
                 <td style="border: 1px solid black; text-align: center;" >{{data.number}}</td>
                 <td style="border: 1px solid black;">{{data.name}}</td>
@@ -34,7 +35,7 @@
                 <td style="border: 1px solid black; text-align: center;" >{{data.tech_writer_days|default_if_none:''}}</td>
                 <td style="border: 1px solid black;">{{comment}}</td>
               </tr>
-
+                   {% endfor %}
               {% endfor %}
             </tbody>
           </table>
