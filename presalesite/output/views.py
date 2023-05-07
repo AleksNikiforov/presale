@@ -29,15 +29,18 @@ def final_list(request):
 
     number_of_paragraph = 1
 
-    tech_writer_coef = Rates.objects.values('tech_writer_coef')
-    tech_writer_coef = tech_writer_coef.values('tech_writer_coef')[0]['tech_writer_coef']
-    tech_writer_cost = Rates.objects.values('tech_writer_cost')[0]['tech_writer_cost']
-    manager_coef = Rates.objects.values('manager_coef')
-    manager_coef = manager_coef.values('manager_coef')[0]['manager_coef']
-    manager_cost = Rates.objects.values('manager_cost')[0]['manager_cost']
-    person = rates.values('person')[0]['person']
-    person_cost = Rates.objects.values('engineer_cost')[0]['engineer_cost'] if person == 'Инженер' else Rates.objects.values('architect_cost')[0]['architect_cost']
-
+    try:
+        tech_writer_coef = Rates.objects.values('tech_writer_coef')
+        tech_writer_coef = tech_writer_coef.values('tech_writer_coef')[0]['tech_writer_coef']
+        tech_writer_cost = Rates.objects.values('tech_writer_cost')[0]['tech_writer_cost']
+        manager_coef = Rates.objects.values('manager_coef')
+        manager_coef = manager_coef.values('manager_coef')[0]['manager_coef']
+        manager_cost = Rates.objects.values('manager_cost')[0]['manager_cost']
+        person = rates.values('person')[0]['person']
+        person_cost = Rates.objects.values('engineer_cost')[0]['engineer_cost'] if person == 'Инженер' else Rates.objects.values('architect_cost')[0]['architect_cost']
+    except Exception as e:
+        return redirect('Rates')
+    
     perechen = [] 
 
     for data in all_fields:
