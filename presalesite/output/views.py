@@ -41,32 +41,33 @@ def final_list(request):
     perechen = [] 
 
     for data in all_fields:
-        #преобразование QuerySet в списко
-        data = list(data.values('name', 'days'))
-        #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
-        person_days = data[0]['days']
-        tech_writer_days = round(tech_writer_coef * person_days, 1)
-        manager_days = round(manager_coef * person_days, 1)
-        summa_s_nds = (person_cost * person_days + tech_writer_cost * tech_writer_days + manager_cost * manager_days) * 1.2
-        #длительность проекта
-        duration = person_days * 150 / 100
-        #добавляем все данные в список для передачи в html
-        data[0].update({'tech_writer_days': tech_writer_days})
-        data[0].update({'manager_days': manager_days})
-        data[0].update({'number': number_of_paragraph})
-        data[0].update({'duration': duration})
-        data[0].update({'summa_s_nds': summa_s_nds})
-        data[0].update({'person': person})
-        # № п/п
-        number_of_paragraph += 1
-        perechen.append(data)
+        if data:
+            #преобразование QuerySet в списко
+            data = list(data.values('name', 'days'))
+            #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
+            person_days = data[0]['days']
+            tech_writer_days = round(tech_writer_coef * person_days, 1)
+            manager_days = round(manager_coef * person_days, 1)
+            summa_s_nds = (person_cost * person_days + tech_writer_cost * tech_writer_days + manager_cost * manager_days) * 1.2
+            #длительность проекта
+            duration = person_days * 150 / 100
+            #добавляем все данные в список для передачи в html
+            data[0].update({'tech_writer_days': tech_writer_days})
+            data[0].update({'manager_days': manager_days})
+            data[0].update({'number': number_of_paragraph})
+            data[0].update({'duration': duration})
+            data[0].update({'summa_s_nds': summa_s_nds})
+            data[0].update({'person': person})
+            # № п/п
+            number_of_paragraph += 1
+            perechen.append(data)
 
-        #делаем расчет общей суммы
-        all_person_days += person_days
-        all_tech_writer_days += tech_writer_days
-        all_manager_days += manager_days
-        all_summa_s_nds += summa_s_nds
-        all_duration += duration
+            #делаем расчет общей суммы
+            all_person_days += person_days
+            all_tech_writer_days += tech_writer_days
+            all_manager_days += manager_days
+            all_summa_s_nds += summa_s_nds
+            all_duration += duration
 
 
     itogo = [{'name': 'Итого:',
