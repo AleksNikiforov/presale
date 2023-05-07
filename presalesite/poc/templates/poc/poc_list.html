@@ -7,10 +7,12 @@
 
     <details style="margin-top:25px;">
 
+      <form onsubmit="return validateForm()">
+
       <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
       >Стендирование
       <label for="float-input" style="margin-left:60px;">Трудозатраты, дней:</label>
-      <input type="number" step="0.1" id="Стендирование" name="Стендирование" />
+      <input type="number" step="0.1" id="Стендирование" name="Стендирование" required />
       </summary>
       <ul>
         <li class="item1">
@@ -80,6 +82,18 @@
       document.getElementById('list-form').submit();
     }
 }
+
+
+function validateForm(event) {
+  var inputs = document.getElementsByTagName("input");
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].hasAttribute("required") && inputs[i].value === "") {
+      alert('Пожалуйста, укажите трудозатраты, дней');
+      return false;
+    }
+  }
+  return true;
+}
 </script>
 
     <input type="hidden" id="checked-items" name="checked_items">
@@ -87,6 +101,7 @@
   </div>
   <a style="margin-left:20px;" class="btn btn-danger" href='delete'>Очистить</a>
   </div>
+</form>
   </form>
 
     {% endblock %} 
