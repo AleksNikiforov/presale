@@ -17,41 +17,49 @@ def final_list(request):
     examination = Examination.objects.all()
     poc = Poc.objects.all()
     rates = Rates.objects.all()
-    print('='*50)
-    print(design)
-    print('='*50)
-    print(examination)
-    print('='*50)
-    print(poc)
-    print('='*50)
-    print(rates)
-    print('='*50)
-    perechen = [design, examination, poc, rates]
 
-    duration_design = Design.objects.values('name', 'days')
-    print('0'*50)
-    print(duration_design)
-    print('0'*50)
-    person = Rates.objects.values('person')
-    engineer_cost = Rates.objects.values('engineer_cost')
-    architect_cost = Rates.objects.values('architect_cost')
-    manager_cost = Rates.objects.values('manager_cost')
-    manager_coef = Rates.objects.values('manager_coef')
-    tech_writer_cost = Rates.objects.values('tech_writer_cost')
+    data = list(design.values('name', 'days'))
+
+
+    number = 1
+
+    person_days = data[0]['days']
+
     tech_writer_coef = Rates.objects.values('tech_writer_coef')
-    print('0'*50)
-    print(person, engineer_cost, architect_cost, manager_cost, manager_coef, tech_writer_cost, tech_writer_coef)
+    tech_writer_coef = tech_writer_coef.values('tech_writer_coef')[0]['tech_writer_coef']
+    tech_writer_days = tech_writer_coef * person_days
 
-    duration_design = Design.objects.values('days')
-    print('0'*50)
-    print(duration_design)
+    manager_coef = Rates.objects.values('manager_coef')
+    manager_coef = manager_coef.values('manager_coef')[0]['manager_coef']
+    manager_days = manager_coef * person_days
+
+    duration = person_days * 150 / 100
+
+    #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
+    tech_writer_cost = Rates.objects.values('tech_writer_cost')[0]['tech_writer_cost']
+    manager_cost = Rates.objects.values('manager_cost')[0]['manager_cost']
+    person = rates.values('person')[0]['person']
+    if person == 'Инженер':
+        person_cost = Rates.objects.values('engineer_cost')[0]['engineer_cost']
+    else:
+        person_cost = Rates.objects.values('architect_cost')[0]['architect_cost']
+    summa_s_nds = (person_cost * person_days + tech_writer_cost * tech_writer_days + manager_cost * manager_days) * 1.2
 
 
-    my_queryset = Design.objects.exclude(days=None)
-    days_list = my_queryset.values_list('days', flat=True)
-    my_value = days_list.first()
-    print('0'*50)
-    print(my_value)
+    data[0].update({'tech_writer_days': tech_writer_days})
+    data[0].update({'manager_days': manager_days})
+    data[0].update({'number': number})
+    data[0].update({'duration': duration})
+    data[0].update({'summa_s_nds': summa_s_nds})
+    data[0].update({'person': person})
+
+    number =+ 1
+
+
+    perechen = data
+
+    print(perechen)
+
 
 
 

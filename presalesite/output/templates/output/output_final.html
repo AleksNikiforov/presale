@@ -13,7 +13,7 @@
                 <th style="border: 1px solid black; text-align: center; width: 30%;">Наименование</th>
                 <th style="border: 1px solid black; text-align: center; width: 10%;">Сумма с НДС, руб</th>
                 <th style="border: 1px solid black; text-align: center; width: 10%;">Длительность, дней</th>
-                <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты PERSON, дней</th>
+                <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты {{perechen.0.person}}, дней</th>
                 <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты МП, дней</th>
                 <th style="border: 1px solid black; text-align: center; width: 10%;">Трудозатраты РТД, дней</th>
                 <th style="border: 1px solid black; text-align: center; width: 30%;">Комментарий</th>
@@ -22,28 +22,20 @@
             <tbody>
 
 
-              {% with number=1 %}
-              {% for dict in perechen %}
-                   {% for data in dict %}
+
+              {% for data in perechen %}
               <tr>
-                {% if data.days is not None %}
-                <td style="border: 1px solid black; text-align: center;">{{number}}</td>
-                {% with number=number|add:1 %}
-                {% endwith %}
-                {% else %}
-                <td style="border: 1px solid black;">{{''}}</td>
-                {% endif %}
+                <td style="border: 1px solid black; text-align: center;" >{{data.number}}</td>
                 <td style="border: 1px solid black;">{{data.name}}</td>
-                <td style="border: 1px solid black;">{{summa_s_nds}}</td>
-                <td style="border: 1px solid black;">{{duration}}</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.summa_s_nds}}</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.duration}}</td>
                 <td style="border: 1px solid black; text-align: center;" >{{data.days|default_if_none:''}}</td>
-                <td style="border: 1px solid black;">{{manager}}</td>
-                <td style="border: 1px solid black;">{{rtd}}</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.manager_days|default_if_none:''}}</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.tech_writer_days|default_if_none:''}}</td>
                 <td style="border: 1px solid black;">{{comment}}</td>
               </tr>
-                   {% endfor %}
+
               {% endfor %}
-              {% endwith %}
             </tbody>
           </table>
     </body>
