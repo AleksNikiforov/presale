@@ -28,7 +28,7 @@ def final_list(request):
 
 
     number_of_paragraph = 1
-
+    #проверяем заполнены ли Rates, если при обращении к Rates выходит ошибка, перенаправляем на форму для заполнения Rates
     try:
         tech_writer_coef = Rates.objects.values('tech_writer_coef')
         tech_writer_coef = tech_writer_coef.values('tech_writer_coef')[0]['tech_writer_coef']
@@ -45,7 +45,7 @@ def final_list(request):
 
     for data in all_fields:
         if data:
-            #преобразование QuerySet в списко
+            #преобразование QuerySet в список
             data = list(data.values('name', 'days'))
             #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
             person_days = data[0]['days']
