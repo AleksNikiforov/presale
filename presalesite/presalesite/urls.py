@@ -25,4 +25,5 @@ urlpatterns = [
     path('examination/', include('examination.urls')),
     path('poc/', include('poc.urls')),
     path('output/', include('output.urls')),
+    path('registration/', include('registration.urls')),  
 ]

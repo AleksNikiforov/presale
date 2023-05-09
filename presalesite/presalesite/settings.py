@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jstemplate',
     'presalesite',
+    'registration',
     'design',
     'examination',
     'poc',

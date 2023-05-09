@@ -19,6 +19,12 @@
 					<a class="nav-item nav-link" title="Главная страница" href="{% url 'Home' %}">Home</a>
 				  </li>
 				  <li class="nav-item">
+					<a class="nav-item nav-link" title="Авторизация" href="{% url 'Login' %}">Login</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-item nav-link" title="Регистрация" href="{% url 'Registration' %}">Registration</a>
+				  </li>
+				  <li class="nav-item">
 					<a class="nav-item nav-link" title="Стоимости/коэффициенты" href="{% url 'Rates' %}">Rates</a>
 				  </li>
 				  <li class="nav-item">
@@ -64,6 +70,15 @@
 				  <li class="nav-item">
 					<a class="nav-item nav-link" href="">Rates</a>
 				  </li> -->
+				  {% if user.is_authenticated %}
+				  <li class="nav-item">
+					<a class="nav-item nav-link" title="Статус авторизации">authorized as: {{user.username}}</a>
+				  </li>
+				  {% else %}
+				  <li class="nav-item">
+					<a class="nav-item nav-link" title="Статус авторизации">not authorized</a>
+				  </li>
+				  {% endif %}
 			</ul>
 		  </div>
 		</div>
