@@ -105,8 +105,13 @@ body {
   white-space: break-word; 
   border-right: 4px solid orange;
   word-wrap: break-word; 
-  animation: printed-text 2s steps(166),
+  animation: printed-text 5s steps(166),
       flashin-border .75s step-start infinite;
+}
+
+.visible {
+  white-space: pre-line;
+  overflow: auto;
 }
 
 @keyframes flashin-border {
