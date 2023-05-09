@@ -2,11 +2,13 @@
 
 {% block content %}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.8/xlsx.full.min.js"></script>
+
 
     <h6 style="margin-left:20px; margin-top:25px; font-weight: bold; cursor: pointer;" >Итоговое КП:</h6>
 
     <body>
-        <table style="border-collapse: collapse; margin-left:20px; margin-right:20px;">
+        <table id="finalTable" style="border-collapse: collapse; margin-left:20px; margin-right:20px;">
             <thead>
               <tr>
                 <th style="border: 1px solid black; text-align: center; width: 5%;">№ п/п</th>
@@ -40,11 +42,23 @@
             </tbody>
           </table>
     </body>
-    <h6 style="margin-left:20px; margin-top:20px; font-weight: bold; cursor: pointer;" >Данное КП можно скачать</h6>
 
 </div>
-<a style="margin-top:5px; margin-left:20px;" class="btn btn-success" href=''>Скачать в формате Excel</a>
+<a style="margin-top:20px; margin-left:20px;" class="btn btn-success" onclick="exportToExcel()">Скачать в формате Excel</a>
 </div>
 
+<script>
+
+function exportToExcel() {
+  var wb = XLSX.utils.table_to_book(document.getElementById('finalTable'), { sheet: "Sheet JS" });
+  
+  // Получить ссылку на лист
+  var ws = wb.Sheets["Sheet JS"];
+
+  // Сохранить книгу Excel как файл
+  return XLSX.writeFile(wb, 'offer.xlsx');
+}
+
+</script>
 
     {% endblock %} 
