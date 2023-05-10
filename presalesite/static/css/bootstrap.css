@@ -88,7 +88,7 @@
 }
 
 .nav-item.nav-link:hover::before {
-  content: attr(title); /* добавляем содержимое всплывающей подсказки, которое берется из атрибута title */
+  /*content: attr(title); /* добавляем содержимое всплывающей подсказки, которое берется из атрибута title */
   position: absolute; /* абсолютное позиционирование */
   top: 100%; /* расположение сверху относительно ссылки */
   left: 50%; /* расположение по центру относительно ссылки */
@@ -3829,6 +3829,10 @@ textarea.form-control-lg {
 }
 .tab-content > .active {
   display: block;
+}
+
+.navbar .nav-link[title="Статус авторизации"] {
+  color: red;
 }
 
 .navbar {

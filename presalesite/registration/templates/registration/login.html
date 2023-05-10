@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
+<div class="d-flex align-items-center justify-content-center" style="height: 50vh;">
+  <div class="text-center ml-auto">
+    <h2 style="margin-left:60px;">Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="d-flex flex-column">
+        <button type="submit" class="btn btn-primary mt-3 btn-sm btn-block" style="width: 70%; margin-left:90px;">Login</button>
+        <a class="btn btn-secondary mt-3 btn-sm btn-block" style="width: 70%; margin-left:90px;" href="{% url 'Registration' %}">Register</a>
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}
 
 

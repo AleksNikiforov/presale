@@ -4,14 +4,12 @@
 <head>
 	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<!-- <link rel="shortcut icon" href="{% static 'esoterics/images/icon.jpg' %}" type="image/x-icon"/> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="{% static 'img/logo.ico' %}">
 	{% block title %}
 	<title>PRE-SALE</title>
 	{% endblock %}
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left:25px">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left:25px;">
 		<div class="container-fluid">
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="nav nav-pills nav-fill">
@@ -19,12 +17,19 @@
 				  <li class="nav-item">
 					<a class="nav-item nav-link" title="Главная страница" href="{% url 'Home' %}">Home</a>
 				  </li>
+
+				  {% if user.is_authenticated %}
+				  <li class="nav-item">
+					<a class="nav-item nav-link" title="Статус авторизации">authorized as: {{user.username}}</a>
+				  </li>
+				  {% else %}
+				  <li class="nav-item">
+					<a class="nav-item nav-link" title="Статус авторизации">not authorized</a>
+				  </li>				  
 				  <li class="nav-item">
 					<a class="nav-item nav-link" title="Авторизация" href="{% url 'Login' %}">Login</a>
 				  </li>
-				  <li class="nav-item">
-					<a class="nav-item nav-link" title="Регистрация" href="{% url 'Registration' %}">Registration</a>
-				  </li>
+				  {% endif %}
 				  <li class="nav-item">
 					<a class="nav-item nav-link" title="Стоимости/коэффициенты" href="{% url 'Rates' %}">Rates</a>
 				  </li>
@@ -38,10 +43,8 @@
 					<a class="nav-item nav-link" title="Стендирование" href="{% url 'Poc' %}">PoC</a>
 				  </li>
 				</li>
-				<li class="nav-item">
-				  <a class="nav-item nav-link" title="Финальное КП" href="{% url 'Output' %}">Output</a>
-				</li>
-				  <!--  <li class="nav-item">
+
+				   <li class="nav-item">
 					<a class="nav-item nav-link" href="">Install</a>
 				  </li>
 				  <li class="nav-item">
@@ -68,18 +71,11 @@
 				  <li class="nav-item">
 					<a class="nav-item nav-link" href="">BusinessTrip</a>
 				  </li>
+
 				  <li class="nav-item">
-					<a class="nav-item nav-link" href="">Rates</a>
-				  </li> -->
-				  {% if user.is_authenticated %}
-				  <li class="nav-item">
-					<a class="nav-item nav-link" title="Статус авторизации">authorized as: {{user.username}}</a>
+					<a class="nav-item nav-link" title="Финальное КП" href="{% url 'Output' %}">Output</a>
 				  </li>
-				  {% else %}
-				  <li class="nav-item">
-					<a class="nav-item nav-link" title="Статус авторизации">not authorized</a>
-				  </li>
-				  {% endif %}
+
 			</ul>
 		  </div>
 		</div>

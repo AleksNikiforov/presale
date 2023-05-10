@@ -98,15 +98,15 @@ body {
 .intro_1 {
   width: 100%;
   max-width: auto;
-  overflow: hidden;
+  overflow: visible;
   color: white;
   font-size: 40px;
   font-family: monospace;
   white-space: break-word; 
-  border-right: 4px solid orange;
+  /* border-right: 4px solid orange; */
   word-wrap: break-word; 
-  animation: printed-text 5s steps(166),
-      flashin-border .75s step-start infinite;
+  /* animation: printed-text 5s steps(166),
+      flashin-border .75s step-start infinite; */
 }
 
 .visible {
@@ -208,7 +208,7 @@ body {
 }
 
 .nav-item.nav-link:hover::before {
-  content: attr(title); /* добавляем содержимое всплывающей подсказки, которое берется из атрибута title */
+  /*content: attr(title); /* добавляем содержимое всплывающей подсказки, которое берется из атрибута title */
   position: absolute; /* абсолютное позиционирование */
   top: 100%; /* расположение сверху относительно ссылки */
   left: 50%; /* расположение по центру относительно ссылки */
@@ -3949,6 +3949,18 @@ textarea.form-control-lg {
 }
 .tab-content > .active {
   display: block;
+}
+
+.navbar .nav-link[title="Статус авторизации"] {
+  color: red;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 50px;
 }
 
 .navbar {
