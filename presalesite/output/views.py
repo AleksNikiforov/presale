@@ -47,9 +47,13 @@ def final_list(request):
         if data:
             #преобразование QuerySet в список
             data = list(data.values('name', 'days'))
-            #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
             person_days = data[0]['days']
-            tech_writer_days = round(tech_writer_coef * person_days, 1)
+            #технический писатель учитывется только в проектно изыскательских работах, в других типах работ он не учитывается
+            if data[0]['name'] != 'Проектно-изыскательские работы':
+                tech_writer_days = 0
+            else:
+                tech_writer_days = round(tech_writer_coef * person_days, 1)
+            #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
             manager_days = round(manager_coef * person_days, 1)
             summa_s_nds = (person_cost * person_days + tech_writer_cost * tech_writer_days + manager_cost * manager_days) * 1.2
             #длительность проекта
@@ -64,15 +68,12 @@ def final_list(request):
             # № п/п
             number_of_paragraph += 1
             perechen.append(data)
-
             #делаем расчет общей суммы
             all_person_days += person_days
             all_tech_writer_days += tech_writer_days
             all_manager_days += manager_days
             all_summa_s_nds += summa_s_nds
             all_duration += duration
-
-
     itogo = [{'name': 'Итого:',
               'days': round(all_person_days, 1),
               'tech_writer_days': round(all_tech_writer_days, 1),
