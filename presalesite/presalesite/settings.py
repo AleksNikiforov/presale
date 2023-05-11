@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'poc',
     'rates',
     'output',
+    'install',
 ]
 
 MIDDLEWARE = [

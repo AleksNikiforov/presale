@@ -7,6 +7,7 @@ from design.models import Design
 from examination.models import Examination
 from poc.models import Poc
 from rates.models import Rates
+from install.models import Install
 from .models import Output
 from .forms import *
 
@@ -17,8 +18,9 @@ def final_list(request):
     examination = Examination.objects.all()
     poc = Poc.objects.all()
     rates = Rates.objects.all()
+    install = Install.objects.all()
     #создание списка по которому пойдет цикл для отображения всех введенных данных
-    all_fields = [design, examination, poc]
+    all_fields = [design, examination, poc, install]
     #создание переменных для общей суммы
     all_person_days = 0
     all_tech_writer_days = 0

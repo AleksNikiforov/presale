@@ -26,4 +26,5 @@ urlpatterns = [
     path('poc/', include('poc.urls')),
     path('output/', include('output.urls')),
     path('registration/', include('registration.urls')),  
+    path('install/', include('install.urls')), 
 ]
