@@ -4,17 +4,14 @@
 
 {% block content %}
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <div class="card p-4">
-    <h2 class="text-center mb-4">Register</h2>
+  <div style="width: 250px;">
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <div class="d-flex justify-content-center">
+      <div>
         <button type="submit" class="btn btn-primary btn-block" style="width: 250px;">Register</button>
       </div>
     </form>
   </div>
 </div>
 {% endblock %}
-
-    
