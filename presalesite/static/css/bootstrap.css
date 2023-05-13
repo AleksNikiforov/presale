@@ -3955,6 +3955,14 @@ textarea.form-control-lg {
   color: red;
 }
 
+.navbar .nav-link[title="Авторизация"] {
+  color: red;
+}
+
+.navbar .nav-link[title="Выйти"] {
+  color: red;
+}
+
 .form-container {
   display: flex;
   justify-content: center;
