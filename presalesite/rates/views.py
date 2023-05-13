@@ -33,8 +33,9 @@ class RatesListView(ListView):
                 default_num_architect = -1
             if person == 'Инженер':
                 default_num_engineer = -1
-            Rates.objects.all().delete()
-            cat = Rates(person = person,
+            Rates.objects.filter(author=request.user).delete()
+            cat = Rates(author = request.user,
+                        person = person,
                         engineer_cost = data['Инженер'][default_num_engineer], 
                         architect_cost = data['Архитектор'][default_num_architect], 
                         manager_cost = data['Менеджер проекта'][0],
@@ -46,10 +47,10 @@ class RatesListView(ListView):
 
 
 def final_list(request):
-    perechen = Rates.objects.all()
+    perechen = Rates.objects.filter(author=request.user)
     return render(request, 'rates/rates_final.html', {'perechen': perechen})
 
 
 def delete(request):
-    Rates.objects.all().delete()
+    Rates.objects.filter(author=request.user).delete()
     return redirect(reverse_lazy('Rates'))

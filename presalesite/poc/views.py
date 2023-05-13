@@ -21,24 +21,25 @@ class PocListView(ListView):
             data.pop("checked_items")                                                      # удаляем checked_items из словаря
             for item in checked:                                                           # значениям на против которые стоят галочки ставим значение клоичества дней Null
                 data[item] = None
-            for n in data.items():                                                         # добавляем записи в БД
+            for n in data.items():   
+                author = request.user                                                      # добавляем записи в БД
                 name = n[0]
                 days = n[1]
                 if days:
-                    cat = Poc(name = name, days = days)
+                    cat = Poc(name = name, days = days, author = author)
                     cat.save()
                 else:
-                    cat = Poc(name = name)
+                    cat = Poc(name = name, author = author)
                     cat.save()   
             return redirect(reverse_lazy('Final_Poc'))
 
 
 def final_list(request):
-    perechen = Poc.objects.all()
+    perechen = Poc.objects.filter(author=request.user)
     return render(request, 'poc/poc_final.html', {'perechen': perechen})
 
 
 def delete(request):
-    Poc.objects.all().delete()
+    Poc.objects.filter(author=request.user).delete()
     return redirect(reverse_lazy('Poc'))
 

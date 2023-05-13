@@ -8,17 +8,16 @@ from examination.models import Examination
 from poc.models import Poc
 from rates.models import Rates
 from install.models import Install
-from .models import Output
 from .forms import *
 
 
 def final_list(request):
     #получение всех значений занесенных в таблицы
-    design = Design.objects.all()
-    examination = Examination.objects.all()
-    poc = Poc.objects.all()
-    rates = Rates.objects.all()
-    install = Install.objects.all()
+    design = Design.objects.filter(author=request.user)
+    examination = Examination.objects.filter(author=request.user)
+    poc = Poc.objects.filter(author=request.user)
+    rates = Rates.objects.filter(author=request.user)
+    install = Install.objects.filter(author=request.user)
     #создание списка по которому пойдет цикл для отображения всех введенных данных
     all_fields = [design, examination, poc, install]
     #создание переменных для общей суммы
@@ -27,19 +26,17 @@ def final_list(request):
     all_manager_days = 0
     all_summa_s_nds = 0
     all_duration = 0
-
-
     number_of_paragraph = 1
     #проверяем заполнены ли Rates, если при обращении к Rates выходит ошибка, перенаправляем на форму для заполнения Rates
     try:
-        tech_writer_coef = Rates.objects.values('tech_writer_coef')
+        tech_writer_coef = Rates.objects.filter(author=request.user).values('tech_writer_coef')
         tech_writer_coef = tech_writer_coef.values('tech_writer_coef')[0]['tech_writer_coef']
-        tech_writer_cost = Rates.objects.values('tech_writer_cost')[0]['tech_writer_cost']
-        manager_coef = Rates.objects.values('manager_coef')
+        tech_writer_cost = Rates.objects.filter(author=request.user).values('tech_writer_cost')[0]['tech_writer_cost']
+        manager_coef = Rates.objects.filter(author=request.user).values('manager_coef')
         manager_coef = manager_coef.values('manager_coef')[0]['manager_coef']
-        manager_cost = Rates.objects.values('manager_cost')[0]['manager_cost']
+        manager_cost = Rates.objects.filter(author=request.user).values('manager_cost')[0]['manager_cost']
         person = rates.values('person')[0]['person']
-        person_cost = Rates.objects.values('engineer_cost')[0]['engineer_cost'] if person == 'Инженер' else Rates.objects.values('architect_cost')[0]['architect_cost']
+        person_cost = Rates.objects.filter(author=request.user).values('engineer_cost')[0]['engineer_cost'] if person == 'Инженер' else Rates.objects.filter(author=request.user).values('architect_cost')[0]['architect_cost']
     except Exception as e:
         return redirect('Rates')
     

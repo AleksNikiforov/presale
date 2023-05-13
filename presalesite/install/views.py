@@ -21,25 +21,25 @@ class InstallListView(ListView):
             data.pop("checked_items")                                                      # удаляем checked_items из словаря
             for item in checked:                                                           # значениям на против которые стоят галочки ставим значение клоичества дней Null
                 data[item] = None
-            for n in data.items():                                                         # добавляем записи в БД
+            for n in data.items(): 
+                author = request.user                                                        # добавляем записи в БД
                 name = n[0]
                 days = n[1]
                 if days:
-                    cat = Install(name = name, days = days)
+                    cat = Install(name = name, days = days, author = author)
                     cat.save()
                 else:
-                    cat = Install(name = name)
+                    cat = Install(name = name, author = author)
                     cat.save()   
             return redirect(reverse_lazy('Final_Install'))
 
 
 def final_list(request):
-    perechen = Install.objects.all()
-    print(perechen)
+    perechen = Install.objects.filter(author=request.user)
     return render(request, 'install/install_final.html', {'perechen': perechen})
 
 
 def delete(request):
-    Install.objects.all().delete()
+    Install.objects.filter(author=request.user).delete()
     return redirect(reverse_lazy('Install'))
 

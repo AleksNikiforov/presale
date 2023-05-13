@@ -21,25 +21,26 @@ class ExaminationListView(ListView):
             data.pop("checked_items")                                                      # удаляем checked_items из словаря
             for item in checked:                                                           # значениям на против которые стоят галочки ставим значение клоичества дней Null
                 data[item] = None
-            for n in data.items():                                                         # добавляем записи в БД
+            for n in data.items():
+                author = request.user                                                          # добавляем записи в БД
                 name = n[0]
                 days = n[1]
                 if days:
-                    cat = Examination(name = name, days = days)
+                    cat = Examination(name = name, days = days, author = author)
                     cat.save()
                 else:
-                    cat = Examination(name = name)
+                    cat = Examination(name = name, author = author)
                     cat.save()   
             return redirect(reverse_lazy('Final_Examination'))
 
 
 def final_list(request):
-    perechen = Examination.objects.all()
+    perechen = Examination.objects.filter(author=request.user)
     print(perechen)
     return render(request, 'examination/examination_final.html', {'perechen': perechen})
 
 
 def delete(request):
-    Examination.objects.all().delete()
+    Examination.objects.filter(author=request.user).delete()
     return redirect(reverse_lazy('Examination'))
 
