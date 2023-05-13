@@ -11,7 +11,7 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('Rates')
+            return redirect('Home')
     else:
         form = CustomUserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
@@ -26,7 +26,7 @@ def login_view(request):
             user = authenticate(request=request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('Rates')
+                return redirect('Home')
     else:
         form = MyLoginForm()
     return render(request, 'registration/login.html', {'form': form})

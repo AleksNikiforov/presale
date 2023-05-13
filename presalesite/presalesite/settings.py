@@ -61,6 +61,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'presalesite.urls'
 
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/registration/login/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
