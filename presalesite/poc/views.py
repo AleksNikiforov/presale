@@ -5,12 +5,26 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from .models import *
 from .forms import *
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
+''' 
+    Здесь мы используем класс LoginRequiredMixin в качестве декоратора на уровне класса,
+    чтобы проверить, авторизован ли пользователь. 
+    Метод dispatch вызывается перед вызовом любого метода запроса (get, post, и т.д.) 
+    и здесь мы просто вызываем метод dispatch родительского класса, 
+    чтобы обеспечить правильное выполнение предварительной обработки запроса.
+'''
 
-class PocListView(ListView):
+
+class PocListView(LoginRequiredMixin, ListView):
+    login_url = '/registration/login/'
     model = Poc
     form_class = PocForm
+
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+    
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
             data = request.POST

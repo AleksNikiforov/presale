@@ -9,8 +9,11 @@ from poc.models import Poc
 from rates.models import Rates
 from install.models import Install
 from .forms import *
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url=settings.LOGIN_URL)
 def final_list(request):
     #получение всех значений занесенных в таблицы
     design = Design.objects.filter(author=request.user)
