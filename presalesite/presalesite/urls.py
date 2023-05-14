@@ -30,6 +30,7 @@ urlpatterns = [
     path('registration/', include('registration.urls')),  
     path('install/', include('install.urls')), 
     path('commissioning/', include('commissioning.urls')), 
+    path('accept/', include('accept.urls')), 
     path('', LoginView.as_view(), name='login'),
 
 ]

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'output',
     'install',
     'commissioning',
+    'accept',
 ]
 
 MIDDLEWARE = [
