@@ -31,6 +31,7 @@ urlpatterns = [
     path('install/', include('install.urls')), 
     path('commissioning/', include('commissioning.urls')), 
     path('accept/', include('accept.urls')), 
+    path('migration/', include('migration.urls')),
     path('', LoginView.as_view(), name='login'),
 
 ]

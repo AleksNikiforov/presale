@@ -10,6 +10,7 @@ from rates.models import Rates
 from install.models import Install
 from commissioning.models import Commissioning
 from accept.models import Accept
+from migration.models import Migration
 from .forms import *
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -25,8 +26,9 @@ def final_list(request):
     install = Install.objects.filter(author=request.user)
     commissioning = Commissioning.objects.filter(author=request.user)
     accept = Accept.objects.filter(author=request.user)
+    migration = Migration.objects.filter(author=request.user)
     #создание списка по которому пойдет цикл для отображения всех введенных данных
-    all_fields = [design, examination, poc, install, commissioning, accept]
+    all_fields = [design, examination, poc, install, commissioning, accept, migration]
     #создание переменных для общей суммы
     all_person_days = 0
     all_tech_writer_days = 0
