@@ -1,0 +1,802 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form method="POST" onsubmit="return submitForm();">
+      {% csrf_token %}
+
+    <details style="margin-top:25px;">
+
+      <form onsubmit="return validateForm()">
+
+      <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
+      >Пуско-наладочные работы
+      <label for="float-input" style="margin-left:60px;">Трудозатраты, дней:</label>
+      <input type="number" step="0.1" id="Пуско-наладочные работы" name="Пуско-наладочные работы" required />
+      </summary>
+      <ul>
+        <li class="item1">
+          <details style="background-color: rgb(172, 165, 165);">
+            <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Подготовка шаблонов конфигурации сетевых устройств" value="Подготовка шаблонов конфигурации сетевых устройств">
+              Подготовка шаблонов конфигурации сетевых устройств
+            </summary> 
+            <ul>
+              <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подготовка шаблонов конфигурации сетевых устройств" value="Подготовка шаблонов конфигурации сетевых устройств">
+                    Подготовка шаблонов конфигурации сетевых устройств
+                  </summary>
+                </li>
+          </ul>
+          </details>
+        </li>
+
+        <li>
+          <details style="background-color: rgb(172, 165, 165);">
+            <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов доступа LAN" value="Пуско-наладка коммутаторов доступа LAN">
+              Пуско-наладка коммутаторов доступа LAN
+              </summary> 
+              <ul>
+                <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов доступа LAN" value="Установка/обновление программного обеспечения коммутаторов доступа LAN">
+                      Установка/обновление программного обеспечения
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов доступа LAN" value="Установка и активация лицензий коммутаторов доступа LAN">
+                      Установка и активация лицензий
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов доступа LAN" value="Базовая настройка оборудования включая стекирование коммутаторов доступа LAN">
+                      Базовая настройка оборудования включая стекирование
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов доступа LAN" value="Настройка параметров коммутации/маршрутизации коммутаторов доступа LAN">
+                      Настройка параметров коммутации/маршрутизации
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN коммутаторов доступа LAN" value="Встраивание в сеть передачи данных LAN коммутаторов доступа LAN">
+                      Встраивание в сеть передачи данных LAN
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов доступа LAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов доступа LAN">
+                      Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов доступа LAN" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов доступа LAN">
+                      Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...)
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов доступа LAN" value="Настройка QoS коммутаторов доступа LAN">
+                      Настройка QoS
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка пользовательских портов коммутаторов доступа LAN" value="Настройка пользовательских портов коммутаторов доступа LAN">
+                      Настройка пользовательских портов
+                    </summary>
+                  </li>
+                  <li>
+                    <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети коммутаторов доступа LAN" value="Подключение тестовых пользователей и отладка работы системы/сети коммутаторов доступа LAN">
+                      Подключение тестовых пользователей и отладка работы системы/сети
+                    </summary>
+                  </li>
+            </ul>
+      </details>
+
+
+      <li>
+        <details style="background-color: rgb(172, 165, 165);"> 
+
+          <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов ядра/агрегации" value="Пуско-наладка коммутаторов ядра/агрегации">
+            Пуско-наладка коммутаторов ядра/агрегации
+            </summary> 
+            <ul>
+              <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов ядра/агрегации" value="Установка/обновление программного обеспечения коммутаторов ядра/агрегации">
+                    Установка/обновление программного обеспечения коммутаторов ядра/агрегации
+                  </summary>
+                </li>
+                <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов ядра/агрегации" value="Установка и активация лицензий коммутаторов ядра/агрегации">
+                    Установка и активация лицензий
+                  </summary>
+                </li>
+                <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов ядра/агрегации" value="Базовая настройка оборудования включая стекирование коммутаторов ядра/агрегации">
+                    Базовая настройка оборудования включая стекирование
+                  </summary>
+                </li>
+                <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов ядра/агрегации" value="Настройка параметров коммутации/маршрутизации коммутаторов ядра/агрегации">
+                    Настройка параметров коммутации/маршрутизации
+                  </summary>
+                </li>
+                <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN коммутаторов ядра/агрегации" value="Встраивание в сеть передачи данных LAN/WAN коммутаторов ядра/агрегации">
+                    Встраивание в сеть передачи данных LAN/WAN
+                  </summary>
+                </li>
+                <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов ядра/агрегации" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов ядра/агрегации">
+                    Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
+                  </summary>
+                </li>
+                <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов ядра/агрегации" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов ядра/агрегации">
+                    Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...)
+                  </summary>
+                </li>
+                <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов ядра/агрегации" value="Настройка QoS коммутаторов ядра/агрегации">
+                    Настройка QoS
+                  </summary>
+                </li>
+                <li>
+                  <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети коммутаторов ядра/агрегации" value="Подключение тестового оборудования и отладка работы системы/сети коммутаторов ядра/агрегации">
+                    Подключение тестового оборудования и отладка работы системы/сети
+                  </summary>
+                </li>
+          </ul>
+    </details>
+
+    <li>
+      <details style="background-color: rgb(172, 165, 165);">
+
+        <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+          <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка граничных коммутаторов WAN" value="Пуско-наладка граничных коммутаторов WAN">
+          Пуско-наладка граничных коммутаторов WAN
+        </summary> 
+        <ul>
+          <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения граничных коммутаторов WAN" value="Установка/обновление программного обеспечения граничных коммутаторов WAN">
+                Установка/обновление программного обеспечения
+              </summary>
+            </li>
+            <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий граничных коммутаторов WAN" value="Установка и активация лицензий граничных коммутаторов WAN">
+                Установка и активация лицензий
+              </summary>
+            </li>
+            <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование граничных коммутаторов WAN" value="Базовая настройка оборудования включая стекирование граничных коммутаторов WAN">
+                Базовая настройка оборудования включая стекирование
+              </summary>
+            </li>
+            <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации граничных коммутаторов WAN" value="Настройка параметров коммутации/маршрутизации граничных коммутаторов WAN">
+                Настройка параметров коммутации/маршрутизации
+              </summary>
+            </li>
+            <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN граничных коммутаторов WAN" value="Встраивание в сеть передачи данных LAN/WAN граничных коммутаторов WAN">
+                Встраивание в сеть передачи данных LAN/WAN
+              </summary>
+            </li>
+            <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных коммутаторов WAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных коммутаторов WAN">
+                Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
+              </summary>
+            </li>
+            <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS граничных коммутаторов WAN" value="Настройка QoS граничных коммутаторов WAN">
+                Настройка QoS
+              </summary>
+            </li>
+            <li>
+              <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети граничных коммутаторов WAN" value="Подключение тестового оборудования и отладка работы системы/сети граничных коммутаторов WAN">
+                Подключение тестового оборудования и отладка работы системы/сети
+              </summary>
+            </li>
+      </ul>
+</details>
+
+
+  <li>
+    <details style="background-color: rgb(172, 165, 165);">
+
+      <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+        <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов серверного сегмента" value="Пуско-наладка коммутаторов серверного сегмента">
+        Пуско-наладка коммутаторов серверного сегмента
+      </summary> 
+      <ul>
+        <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов серверного сегмента" value="Установка/обновление программного обеспечения коммутаторов серверного сегмента">
+              Установка/обновление программного обеспечения
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов серверного сегмента" value="Установка и активация лицензий коммутаторов серверного сегмента">
+              Установка и активация лицензий
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов серверного сегмента" value="Базовая настройка оборудования включая стекирование коммутаторов серверного сегмента">
+              Базовая настройка оборудования включая стекирование
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов серверного сегмента" value="Настройка параметров коммутации/маршрутизации коммутаторов серверного сегмента">
+              Настройка параметров коммутации/маршрутизации
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN коммутаторов серверного сегмента" value="Встраивание в сеть передачи данных LAN/WAN коммутаторов серверного сегмента">
+              Встраивание в сеть передачи данных LAN/WAN
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов серверного сегмента" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов серверного сегмента">
+              Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов серверного сегмента" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов серверного сегмента">
+              Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...)
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов серверного сегмента" value="Настройка QoS коммутаторов серверного сегмента">
+              Настройка QoS
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых серверов и отладка работы системы/сети коммутаторов серверного сегмента" value="Подключение тестовых серверов и отладка работы системы/сети коммутаторов серверного сегмента">
+              Подключение тестовых серверов и отладка работы системы/сети
+            </summary>
+          </li>
+    </ul>
+</details>
+
+
+<li>
+  <details style="background-color: rgb(172, 165, 165);">
+
+    <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка граничных маршрутизаторов WAN" value="Пуско-наладка граничных маршрутизаторов WAN">
+      Пуско-наладка граничных маршрутизаторов WAN
+    </summary> 
+    <ul>
+      <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения граничных маршрутизаторов WAN" value="Установка/обновление программного обеспечения граничных маршрутизаторов WAN">
+            Установка/обновление программного обеспечения
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий граничных маршрутизаторов WAN" value="Установка и активация лицензий граничных маршрутизаторов WAN">
+            Установка и активация лицензий
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование граничных маршрутизаторов WAN" value="Базовая настройка оборудования включая стекирование граничных маршрутизаторов WAN">
+            Базовая настройка оборудования включая стекирование
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации граничных маршрутизаторов WAN" value="Настройка параметров коммутации/маршрутизации граничных маршрутизаторов WAN">
+            Настройка параметров коммутации/маршрутизации
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN граничных маршрутизаторов WAN" value="Встраивание в сеть передачи данных LAN/WAN граничных маршрутизаторов WAN">
+            Встраивание в сеть передачи данных LAN/WAN
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных маршрутизаторов WAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных маршрутизаторов WAN">
+            Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка голосовых сервисов граничных маршрутизаторов WAN" value="Настройка голосовых сервисов граничных маршрутизаторов WAN">
+            Настройка голосовых сервисов
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS граничных маршрутизаторов WAN" value="Настройка QoS граничных маршрутизаторов WAN">
+            Настройка QoS
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети граничных маршрутизаторов WAN" value="Подключение тестового оборудования и отладка работы системы/сети граничных маршрутизаторов WAN">
+            Подключение тестового оборудования и отладка работы системы/сети
+          </summary>
+        </li>
+  </ul>
+</details>
+
+
+
+<li>
+  <details style="background-color: rgb(172, 165, 165);">
+
+    <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка межсетевых экранов" value="Пуско-наладка межсетевых экранов">
+      Пуско-наладка межсетевых экранов
+    </summary> 
+    <ul>
+      <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения межсетевых экранов" value="Установка/обновление программного обеспечения межсетевых экранов">
+            Установка/обновление программного обеспечения
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий межсетевых экранов" value="Установка и активация лицензий межсетевых экранов">
+            Установка и активация лицензий
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка кластера высокой доступности межсетевых экранов" value="Настройка кластера высокой доступности межсетевых экранов">
+            Настройка кластера высокой доступности
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных межсетевых экранов" value="Встраивание в сеть передачи данных межсетевых экранов">
+            Встраивание в сеть передачи данных
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с AD межсетевых экранов" value="Интеграция с AD межсетевых экранов">
+            Интеграция с AD
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики межсетевого экранирования (stateful firewalling)" value="Настройка политики межсетевого экранирования (stateful firewalling)">
+            Настройка политики межсетевого экранирования (stateful firewalling)
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)" value="Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)">
+            Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)" value="Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)">
+            Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Миграция политик безопасности межсетевых экранов" value="Миграция политик безопасности межсетевых экранов">
+            Миграция политик безопасности
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Сбор данных для подготовки политики безопасности" value="Сбор данных для подготовки политики безопасности">
+            Сбор данных для подготовки политики безопасности
+          </summary>
+        </li>
+  </ul>
+</details>
+
+
+
+<li>
+  <details style="background-color: rgb(172, 165, 165);">
+
+    <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка серверных платформ (системы управления/контроля доступа/...)" value="Пуско-наладка серверных платформ (системы управления/контроля доступа/...)">
+      Пуско-наладка серверных платформ (системы управления/контроля доступа/...)
+    </summary> 
+    <ul>
+      <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения серверных платформ" value="Установка/обновление программного обеспечения серверных платформ">
+            Установка/обновление программного обеспечения
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий серверных платформ" value="Установка и активация лицензий серверных платформ">
+            Установка и активация лицензий
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка программного обеспечения серверных платформ" value="Базовая настройка программного обеспечения серверных платформ">
+            Базовая настройка программного обеспечения
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных серверных платформ" value="Встраивание в сеть передачи данных серверных платформ">
+            Встраивание в сеть передачи данных
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) серверных платформ" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) серверных платформ">
+            Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP)
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка базовых функций системы серверных платформ" value="Настройка базовых функций системы серверных платформ">
+            Настройка базовых функций системы
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Отладка работы системы/сети серверных платформ" value="Отладка работы системы/сети серверных платформ">
+            Отладка работы системы/сети
+          </summary>
+        </li>
+  </ul>
+</details>
+
+
+
+<li>
+  <details style="background-color: rgb(172, 165, 165);">
+
+    <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка WLAN (централизованный контроллер)" value="Пуско-наладка WLAN (централизованный контроллер)">
+      Пуско-наладка WLAN (централизованный контроллер)
+    </summary> 
+    <ul>
+      <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения контроллеров WLAN (централизованный контроллер)" value="Установка/обновление программного обеспечения контроллеров WLAN (централизованный контроллер)">
+            Установка/обновление программного обеспечения контроллеров WLAN
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий (централизованный контроллер)" value="Установка и активация лицензий (централизованный контроллер)">
+            Установка и активация лицензий
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая кластеризацию (централизованный контроллер)" value="Базовая настройка оборудования включая кластеризацию (централизованный контроллер)">
+            Базовая настройка оборудования включая кластеризацию
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации (централизованный контроллер)" value="Настройка параметров коммутации/маршрутизации (централизованный контроллер)">
+            Настройка параметров коммутации/маршрутизации
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN (централизованный контроллер)" value="Встраивание в сеть передачи данных LAN/WAN (централизованный контроллер)">
+            Встраивание в сеть передачи данных LAN/WAN
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (централизованный контроллер)" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (централизованный контроллер)">
+            Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение точек доступа к контроллеру (централизованный контроллер)" value="Подключение точек доступа к контроллеру (централизованный контроллер)">
+            Подключение точек доступа к контроллеру
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Отладка и обновление программного обеспечения точек доступа (централизованный контроллер)" value="Отладка и обновление программного обеспечения точек доступа (централизованный контроллер)">
+            Отладка и обновление программного обеспечения точек доступа
+          </summary>
+        </li>
+
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Предварительное радиообследование (централизованный контроллер)" value="Предварительное радиообследование (централизованный контроллер)">
+            Предварительное радиообследование
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров беспроводной сети (централизованный контроллер)" value="Настройка параметров беспроводной сети (централизованный контроллер)">
+            Настройка параметров беспроводной сети
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров аутентификации пользователей (централизованный контроллер)" value="Настройка параметров аутентификации пользователей (централизованный контроллер)">
+            Настройка параметров аутентификации пользователей
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS (централизованный контроллер)" value="Настройка QoS (централизованный контроллер)">
+            Настройка QoS
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Финальное радиообследование (централизованный контроллер)" value="Финальное радиообследование (централизованный контроллер)">
+            Финальное радиообследование
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети (централизованный контроллер)" value="Подключение тестовых пользователей и отладка работы системы/сети (централизованный контроллер)">
+            Подключение тестовых пользователей и отладка работы системы/сети
+          </summary>
+        </li>
+  </ul>
+</details>
+
+
+<li>
+  <details style="background-color: rgb(172, 165, 165);">
+
+    <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка WLAN (Mobility Express)" value="Пуско-наладка WLAN (Mobility Express)">
+      Пуско-наладка WLAN (Mobility Express)
+    </summary> 
+    <ul>
+      <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения точек доступа (Mobility Express)" value="Установка/обновление программного обеспечения точек доступа (Mobility Express)">
+            Установка/обновление программного обеспечения точек доступа
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка контроллера на точках доступа (Mobility Express)" value="Настройка контроллера на точках доступа (Mobility Express)">
+            Настройка контроллера на точках доступа
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий (Mobility Express)" value="Установка и активация лицензий (Mobility Express)">
+            Установка и активация лицензий
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая кластеризацию (Mobility Express)" value="Базовая настройка оборудования включая кластеризацию (Mobility Express)">
+            Базовая настройка оборудования включая кластеризацию
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации (Mobility Express)" value="Настройка параметров коммутации/маршрутизации (Mobility Express)">
+            Настройка параметров коммутации/маршрутизации
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN (Mobility Express)" value="Встраивание в сеть передачи данных LAN/WAN (Mobility Express)">
+            Встраивание в сеть передачи данных LAN/WAN
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (Mobility Express)" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (Mobility Express)">
+            Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение точек доступа к контроллеру (Mobility Express)" value="Подключение точек доступа к контроллеру (Mobility Express)">
+            Подключение точек доступа к контроллеру
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Предварительное радиообследование (Mobility Express)" value="Предварительное радиообследование (Mobility Express)">
+            Предварительное радиообследование
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров беспроводной сети (Mobility Express)" value="Настройка параметров беспроводной сети (Mobility Express)">
+            Настройка параметров беспроводной сети
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров аутентификации пользователей (Mobility Express)" value="Настройка параметров аутентификации пользователей (Mobility Express)">
+            Настройка параметров аутентификации пользователей
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS (Mobility Express)" value="Настройка QoS (Mobility Express)">
+            Настройка QoS
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Финальное радиообследование (Mobility Express)" value="Финальное радиообследование (Mobility Express)">
+            Финальное радиообследование
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети (Mobility Express)" value="Подключение тестовых пользователей и отладка работы системы/сети (Mobility Express)">
+            Подключение тестовых пользователей и отладка работы системы/сети
+          </summary>
+        </li>
+  </ul>
+</details>
+
+<li>
+  <details style="background-color: rgb(172, 165, 165);">
+
+    <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка системы VMware NSX" value="Пуско-наладка системы VMware NSX">
+      Пуско-наладка системы VMware NSX
+    </summary> 
+    <ul>
+      <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и первичная настройка NSX Manager системы VMware NSX" value="Установка и первичная настройка NSX Manager системы VMware NSX">
+            Установка и первичная настройка NSX Manager
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий NSX системы VMware NSX" value="Установка и активация лицензий NSX системы VMware NSX">
+            Установка и активация лицензий NSX
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и первичная настройка NSX Edge системы VMware NSX" value="Установка и первичная настройка NSX Edge системы VMware NSX">
+            Установка и первичная настройка NSX Edge
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка ПО NSX на гипервизоры системы VMware NSX" value="Установка ПО NSX на гипервизоры системы VMware NSX">
+            Установка ПО NSX на гипервизоры
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка ПО NSX на BMH-сервер системы VMware NSX" value="Установка ПО NSX на BMH-сервер системы VMware NSX">
+            Установка ПО NSX на BMH-сервер
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay) системы VMware NSX" value="Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay) системы VMware NSX">
+            Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay)
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Cоздание сегментов и маршрутизаторов T0/T1 системы VMware NSX" value="Cоздание сегментов и маршрутизаторов T0/T1 системы VMware NSX">
+            Cоздание сегментов и маршрутизаторов T0/T1
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка Multi-Site/Federation системы VMware NSX" value="Настройка Multi-Site/Federation системы VMware NSX">
+            Настройка Multi-Site/Federation
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с физической сетью системы VMware NSX" value="Интеграция с физической сетью системы VMware NSX">
+            Интеграция с физической сетью
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка параметров межсетевого экранирования на DFW системы VMware NSX" value="Базовая настройка параметров межсетевого экранирования на DFW системы VMware NSX">
+            Базовая настройка параметров межсетевого экранирования на DFW
+          </summary>
+        </li>
+        <li>
+          <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых серверных сегментов, отладка работы системы/сети системы VMware NSX" value="Подключение тестовых серверных сегментов, отладка работы системы/сети системы VMware NSX">
+            Подключение тестовых серверных сегментов, отладка работы системы/сети
+          </summary>
+        </li>
+  </ul>
+</details>
+
+
+<script>
+  function submitForm() {
+      var checkedItems = [];
+      var checkboxes = document.querySelectorAll('.list-item-checkbox:checked');
+      checkboxes.forEach(function(checkbox) {
+          checkedItems.push(checkbox.value);
+      });
+      if (checkedItems.length === 0) {
+        alert('Нужно отметить хотя бы один элемент');
+        return false;
+    } 
+      else {
+      document.getElementById('checked-items').value = checkedItems;
+      document.getElementById('list-form').submit();
+    }
+}
+
+function validateForm() {
+  var inputs = document.getElementsByTagName("input");
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].hasAttribute("required") && inputs[i].value === "") {
+      alert("Пожалуйста, укажите трудозатраты, дней");
+      return false;
+    }
+  }
+  return true;
+}
+</script>
+
+    <input type="hidden" id="checked-items" name="checked_items">
+    <button style="margin-left:50px;" type="submit" class="btn btn-primary">Добавить в Расчет</button>
+  </div>
+  <a style="margin-left:20px;" class="btn btn-danger" href='delete'>Очистить</a>
+  </div>
+</form>
+  </form>
+
+    {% endblock %} 
+
+
+    

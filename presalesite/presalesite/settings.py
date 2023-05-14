@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rates',
     'output',
     'install',
+    'commissioning',
 ]
 
 MIDDLEWARE = [
