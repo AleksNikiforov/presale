@@ -8,6 +8,7 @@ from examination.models import Examination
 from poc.models import Poc
 from rates.models import Rates
 from install.models import Install
+from commissioning.models import Commissioning
 from .forms import *
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -21,8 +22,9 @@ def final_list(request):
     poc = Poc.objects.filter(author=request.user)
     rates = Rates.objects.filter(author=request.user)
     install = Install.objects.filter(author=request.user)
+    commissioning = Commissioning.objects.filter(author=request.user)
     #создание списка по которому пойдет цикл для отображения всех введенных данных
-    all_fields = [design, examination, poc, install]
+    all_fields = [design, examination, poc, install, commissioning]
     #создание переменных для общей суммы
     all_person_days = 0
     all_tech_writer_days = 0
