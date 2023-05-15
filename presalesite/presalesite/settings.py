@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'commissioning',
     'accept',
     'migration',
+    'other_jobs',
 ]
 
 MIDDLEWARE = [

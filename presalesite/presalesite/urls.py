@@ -32,6 +32,7 @@ urlpatterns = [
     path('commissioning/', include('commissioning.urls')), 
     path('accept/', include('accept.urls')), 
     path('migration/', include('migration.urls')),
+    path('other_jobs/', include('other_jobs.urls')),
     path('', LoginView.as_view(), name='login'),
 
 ]
