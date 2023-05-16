@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'accept',
     'migration',
     'other_jobs',
+    'subcontractor',
 ]
 
 MIDDLEWARE = [

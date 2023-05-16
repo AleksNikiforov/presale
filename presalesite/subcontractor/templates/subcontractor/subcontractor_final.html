@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h6 style="margin-left:20px; font-weight: bold; cursor: pointer;" >Для расчет будут использованы следующие значения:</h6>
+
+    <body>
+        <table style="border-collapse: collapse; margin-left:20px;">
+            <thead>
+              <tr>
+                <th style="border: 1px solid black; text-align: center;">Наименование подрядчика</th>
+                <th style="border: 1px solid black; text-align: center; width: 30%;">Наименование работ</th>
+                <th style="border: 1px solid black; text-align: center; width: 30%;">Стоимость, руб.</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for data in perechen %}
+              <tr>
+                <td style="border: 1px solid black; text-align: center;">{{data.subcontract_name}}</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.subcontract_jobs}}</td>
+                <td style="border: 1px solid black; text-align: center;" >{{data.subcontract_price}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+    </body>
+    <h6 style="margin-left:20px; margin-top:20px; font-weight: bold; cursor: pointer;" >Если передумал, данные можно стереть</h6>
+
+</div>
+<a style="margin-top:5px; margin-left:20px;" class="btn btn-danger" href='delete'>Стереть</a>
+</div>
+
+
+    {% endblock %} 

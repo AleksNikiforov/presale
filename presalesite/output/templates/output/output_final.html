@@ -27,16 +27,31 @@
 
               {% for dict in perechen %}
                    {% for data in dict %}
-              <tr>
-                <td style="border: 1px solid black; text-align: center;" >{{data.number}}</td>
-                <td style="border: 1px solid black;">{{data.name}}</td>
-                <td style="border: 1px solid black; text-align: center;" >{{data.summa_s_nds}}</td>
-                <td style="border: 1px solid black; text-align: center;" >{{data.duration}}</td>
-                <td style="border: 1px solid black; text-align: center;" >{{data.days|default_if_none:''}}</td>
-                <td style="border: 1px solid black; text-align: center;" >{{data.manager_days|default_if_none:''}}</td>
-                <td style="border: 1px solid black; text-align: center;" >{{data.tech_writer_days|default_if_none:''}}</td>
-                <td style="border: 1px solid black;">{{comment}}</td>
-              </tr>
+                      <tr>
+                        <td style="border: 1px solid black; text-align: center;" >{{data.number}}</td>
+
+                        {% if data.name %}
+                        <td style="border: 1px solid black;">{{data.name}}</td>
+                        {% else %}
+                        <td style="border: 1px solid black;">{{data.subcontract_jobs}}</td>
+                        {% endif %}
+
+                        {% if data.summa_s_nds %}
+                        <td style="border: 1px solid black; text-align: center;" >{{data.summa_s_nds}}</td>
+                        {% else %}
+                        <td style="border: 1px solid black; text-align: center;" >{{data.subcontract_price}}</td>
+                        {% endif %}
+
+                        <td style="border: 1px solid black; text-align: center;" >{{data.duration}}</td>
+                        <td style="border: 1px solid black; text-align: center;" >{{data.days|default_if_none:''}}</td>
+                        <td style="border: 1px solid black; text-align: center;" >{{data.manager_days|default_if_none:''}}</td>
+                        <td style="border: 1px solid black; text-align: center;" >{{data.tech_writer_days|default_if_none:''}}</td>
+                        {% if data.subcontract_name %}
+                        <td style="border: 1px solid black;">Работы силами подрядчика: {{data.subcontract_name}}</td>
+                        {% else %}
+                        <td style="border: 1px solid black;">{{comment}}</td>
+                        {% endif %}
+                      </tr>
                    {% endfor %}
               {% endfor %}
             </tbody>

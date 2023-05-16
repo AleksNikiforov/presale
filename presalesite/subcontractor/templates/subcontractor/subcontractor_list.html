@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+	  {% block content %}
+
+      <form method="POST" onsubmit="return validateForm();">
+        {% csrf_token %}
+
+        <details>
+            <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
+            >Необходимо указать наименование подрядичка, работы проводимые подрядчиком и стоимость работ: 
+            </summary>
+        <ul>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">  
+              <input style="width: 218px; text-align: left;" type="text" id="Наименование подрядчика" name="Наименование подрядчика" placeholder="Наименование подрядчика" value="" required/>
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">  
+              <input style="width: 218px; text-align: left;" type="text" id="Наименование работ" name="Наименование работ" placeholder="Наименование работ" value="" required/>
+            </summary>
+          </li>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">  
+              <input style="width: 218px; text-align: left;" type="number" id="Стоимость" name="Стоимость" placeholder="Стоимость с НДС, руб" value="" required/>
+            </summary>
+          </li>
+        </ul>
+
+
+  
+	  <input type="hidden" id="checked-items" name="checked_items">
+	  <button style="margin-left:50px;" type="submit" class="btn btn-primary">Добавить в Расчет</button>
+		<a style="margin-left:20px;" class="btn btn-danger" href='delete'>Очистить</a>
+	</form>
+
+</details>
+
+	  {% endblock %}

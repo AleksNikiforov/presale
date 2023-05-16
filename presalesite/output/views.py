@@ -12,6 +12,7 @@ from commissioning.models import Commissioning
 from accept.models import Accept
 from migration.models import Migration
 from other_jobs.models import Other_jobs
+from subcontractor.models import Subcontractor
 from .forms import *
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -29,8 +30,9 @@ def final_list(request):
     accept = Accept.objects.filter(author=request.user)
     migration = Migration.objects.filter(author=request.user)
     other_jobs = Other_jobs.objects.filter(author=request.user)
+    subcontractor = Subcontractor.objects.filter(author=request.user)
     #создание списка по которому пойдет цикл для отображения всех введенных данных
-    all_fields = [design, examination, poc, install, commissioning, accept, migration, other_jobs]
+    all_fields = [design, examination, poc, install, commissioning, accept, migration, other_jobs, subcontractor]
     #создание переменных для общей суммы
     all_person_days = 0
     all_tech_writer_days = 0
@@ -56,40 +58,53 @@ def final_list(request):
     for data in all_fields:
         if data:
             #преобразование QuerySet в список
-            data = list(data.values('name', 'days'))
-            person_days = data[0]['days']
-            #технический писатель учитывется только в проектно изыскательских работах, в других типах работ он не учитывается
-            if data[0]['name'] != 'Проектно-изыскательские работы':
-                tech_writer_days = 0
+            data = list(data.values())
+            #проверяем есть ли подрядчик, с ним работает отдельно, отдельная строка
+            key_of_subcontractor = data[0].get('subcontract_name')
+            if key_of_subcontractor:
+                data[0].update({'number': number_of_paragraph})
+                data[0].update({'subcontract_name': data[0].get('subcontract_name')})
+                data[0].update({'subcontract_jobs': data[0].get('subcontract_jobs')})
+                data[0].update({'subcontract_price': data[0].get('subcontract_price')})
+                number_of_paragraph += 1
+                perechen.append(data)
+                all_summa_s_nds += data[0].get('subcontract_price')
             else:
-                tech_writer_days = round(tech_writer_coef * person_days, 1)
-            #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
-            manager_days = round(manager_coef * person_days, 1)
-            summa_s_nds = (person_cost * person_days + tech_writer_cost * tech_writer_days + manager_cost * manager_days) * 1.2
-            #длительность проекта
-            duration = person_days * 150 / 100
-            #добавляем все данные в список для передачи в html
-            data[0].update({'tech_writer_days': tech_writer_days})
-            data[0].update({'manager_days': manager_days})
-            data[0].update({'number': number_of_paragraph})
-            data[0].update({'duration': duration})
-            data[0].update({'summa_s_nds': summa_s_nds})
-            data[0].update({'person': person})
-            # № п/п
-            number_of_paragraph += 1
-            perechen.append(data)
-            #делаем расчет общей суммы
-            all_person_days += person_days
-            all_tech_writer_days += tech_writer_days
-            all_manager_days += manager_days
-            all_summa_s_nds += summa_s_nds
-            all_duration += duration
+                person_days = data[0]['days']
+                #технический писатель учитывется только в проектно изыскательских работах, в других типах работ он не учитывается
+                if data[0]['name'] != 'Проектно-изыскательские работы':
+                    tech_writer_days = 0
+                else:
+                    tech_writer_days = round(tech_writer_coef * person_days, 1)
+                #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
+                manager_days = round(manager_coef * person_days, 1)
+                summa_s_nds = (person_cost * person_days + tech_writer_cost * tech_writer_days + manager_cost * manager_days) * 1.2
+                #длительность проекта
+                duration = person_days * 150 / 100
+                #добавляем все данные в список для передачи в html
+                data[0].update({'tech_writer_days': tech_writer_days})
+                data[0].update({'manager_days': manager_days})
+                data[0].update({'number': number_of_paragraph})
+                data[0].update({'duration': duration})
+                data[0].update({'summa_s_nds': summa_s_nds})
+                data[0].update({'person': person})
+                # № п/п
+                number_of_paragraph += 1
+                perechen.append(data)
+                #делаем расчет общей суммы
+                all_person_days += person_days
+                all_tech_writer_days += tech_writer_days
+                all_manager_days += manager_days
+                all_summa_s_nds += summa_s_nds
+                all_duration += duration
+
     itogo = [{'name': 'Итого:',
               'days': round(all_person_days, 1),
               'tech_writer_days': round(all_tech_writer_days, 1),
               'manager_days': round(all_manager_days,1),
               'duration': round(all_duration,1),
-              'summa_s_nds': round(all_summa_s_nds,1)}]
+              'summa_s_nds': round(all_summa_s_nds,1)}
+              ]
     perechen.append(itogo)
 
 
