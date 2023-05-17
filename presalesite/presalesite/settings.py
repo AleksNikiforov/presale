@@ -15,9 +15,6 @@ import os.path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print('='*50)
-print(BASE_DIR)
-print('='*50)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -26,7 +23,7 @@ print('='*50)
 SECRET_KEY = 'django-insecure-r0#-wwb@07w!jinno78kjv2!eemr+!5&y*o5l1dgn=q6tl!+pl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
