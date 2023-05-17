@@ -34,6 +34,7 @@ urlpatterns = [
     path('migration/', include('migration.urls')),
     path('other_jobs/', include('other_jobs.urls')),
     path('subcontractor/', include('subcontractor.urls')),
+    path('other/', include('other.urls')),
     path('', LoginView.as_view(), name='login'),
 
 ]

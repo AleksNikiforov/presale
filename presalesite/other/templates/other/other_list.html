@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+	  {% block content %}
+
+      <form method="POST" onsubmit="return validateForm();">
+        {% csrf_token %}
+
+        <details>
+            <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
+            >Необходимо указать общую стоимость расходных материалов (комплект болт-шайба/кабельные стяжки/лента-липучка/труба гофрированная/витая пара/медные патчкорды/оптические патчкорды) руб. 
+            </summary>
+        <ul>
+          <li>
+            <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">  
+              <input style="width: 218px; text-align: left;" type="number" id="Общая стоимость расходных материалов" name="Общая стоимость расходных материалов" placeholder="Общая стоимость, руб." value="" required/>
+            </summary>
+          </li>
+        </ul>
+
+
+  
+	  <input type="hidden" id="checked-items" name="checked_items">
+	  <button style="margin-left:50px;" type="submit" class="btn btn-primary">Добавить в Расчет</button>
+		<a style="margin-left:20px;" class="btn btn-danger" href='delete'>Очистить</a>
+	</form>
+
+</details>
+
+	  {% endblock %}

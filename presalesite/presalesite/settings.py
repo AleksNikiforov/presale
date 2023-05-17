@@ -26,7 +26,7 @@ print('='*50)
 SECRET_KEY = 'django-insecure-r0#-wwb@07w!jinno78kjv2!eemr+!5&y*o5l1dgn=q6tl!+pl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'migration',
     'other_jobs',
     'subcontractor',
+    'other',
 ]
 
 MIDDLEWARE = [

@@ -38,6 +38,8 @@
 
                         {% if data.summa_s_nds %}
                         <td style="border: 1px solid black; text-align: center;" >{{data.summa_s_nds}}</td>
+                        {% elif data.total_price %}
+                        <td style="border: 1px solid black; text-align: center;" >{{data.total_price}}</td>
                         {% else %}
                         <td style="border: 1px solid black; text-align: center;" >{{data.subcontract_price}}</td>
                         {% endif %}

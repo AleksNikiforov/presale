@@ -13,6 +13,7 @@ from accept.models import Accept
 from migration.models import Migration
 from other_jobs.models import Other_jobs
 from subcontractor.models import Subcontractor
+from other.models import Other
 from .forms import *
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -31,8 +32,9 @@ def final_list(request):
     migration = Migration.objects.filter(author=request.user)
     other_jobs = Other_jobs.objects.filter(author=request.user)
     subcontractor = Subcontractor.objects.filter(author=request.user)
+    other = Other.objects.filter(author=request.user)
     #создание списка по которому пойдет цикл для отображения всех введенных данных
-    all_fields = [design, examination, poc, install, commissioning, accept, migration, other_jobs, subcontractor]
+    all_fields = [design, examination, poc, install, commissioning, accept, migration, other_jobs, subcontractor, other]
     #создание переменных для общей суммы
     all_person_days = 0
     all_tech_writer_days = 0
@@ -59,9 +61,26 @@ def final_list(request):
         if data:
             #преобразование QuerySet в список
             data = list(data.values())
+            print('1'*50)
+            print(data)
+            print('1'*50)
             #проверяем есть ли подрядчик, с ним работает отдельно, отдельная строка
             key_of_subcontractor = data[0].get('subcontract_name')
-            if key_of_subcontractor:
+            key_of_other = data[0].get('total_price')
+            print('2'*50)
+            print(key_of_other)
+            print('2'*50)
+            if key_of_other:
+                data[0].update({'number': number_of_paragraph})
+                data[0].update({'name': 'Прочие расходы (Монтажный комплект)'})
+                data[0].update({'total_price': data[0].get('total_price')})
+                print(data)
+                number_of_paragraph += 1
+                perechen.append(data)
+                print('3'*50)
+                all_summa_s_nds += data[0].get('total_price')
+                print('3'*50)
+            elif key_of_subcontractor:
                 data[0].update({'number': number_of_paragraph})
                 data[0].update({'subcontract_name': data[0].get('subcontract_name')})
                 data[0].update({'subcontract_jobs': data[0].get('subcontract_jobs')})
@@ -106,6 +125,7 @@ def final_list(request):
               'summa_s_nds': round(all_summa_s_nds,1)}
               ]
     perechen.append(itogo)
+    print(perechen)
 
 
     return render(request, 'output/output_final.html', {'perechen': perechen})
