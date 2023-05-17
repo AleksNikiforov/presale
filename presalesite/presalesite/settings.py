@@ -26,9 +26,10 @@ SECRET_KEY = 'django-insecure-r0#-wwb@07w!jinno78kjv2!eemr+!5&y*o5l1dgn=q6tl!+pl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-
+# This is the default port
+PORT = 8008
 # Application definition
 
 INSTALLED_APPS = [
