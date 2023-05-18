@@ -14,6 +14,7 @@ from migration.models import Migration
 from other_jobs.models import Other_jobs
 from subcontractor.models import Subcontractor
 from other.models import Other
+from businesstrip.models import BusinessTrip
 from .forms import *
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -33,8 +34,9 @@ def final_list(request):
     other_jobs = Other_jobs.objects.filter(author=request.user)
     subcontractor = Subcontractor.objects.filter(author=request.user)
     other = Other.objects.filter(author=request.user)
+    businesstrip = BusinessTrip.objects.filter(author=request.user)
     #создание списка по которому пойдет цикл для отображения всех введенных данных
-    all_fields = [design, examination, poc, install, commissioning, accept, migration, other_jobs, subcontractor, other]
+    all_fields = [design, examination, poc, install, commissioning, accept, migration, other_jobs, subcontractor, other, businesstrip]
     #создание переменных для общей суммы
     all_person_days = 0
     all_tech_writer_days = 0
@@ -64,6 +66,7 @@ def final_list(request):
             #проверяем есть ли подрядчик, с ним работает отдельно, отдельная строка
             key_of_subcontractor = data[0].get('subcontract_name')
             key_of_other = data[0].get('total_price')
+            key_of_businesstrip = data[0].get('daily_allowance')
             if key_of_other:
                 data[0].update({'number': number_of_paragraph})
                 data[0].update({'name': 'Прочие расходы (Монтажный комплект)'})
@@ -79,6 +82,13 @@ def final_list(request):
                 number_of_paragraph += 1
                 perechen.append(data)
                 all_summa_s_nds += data[0].get('subcontract_price')
+            elif key_of_businesstrip:
+                data[0].update({'number': number_of_paragraph})
+                data[0].update({'name': 'Командировочные расходы'})
+                data[0].update({'total_price': data[0].get('total_cost')})
+                number_of_paragraph += 1
+                perechen.append(data)
+                all_summa_s_nds += data[0].get('total_cost')
             else:
                 person_days = data[0]['days']
                 #технический писатель учитывется только в проектно изыскательских работах, в других типах работ он не учитывается

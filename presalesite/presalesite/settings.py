@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'other_jobs',
     'subcontractor',
     'other',
+    'businesstrip',
 ]
 
 MIDDLEWARE = [

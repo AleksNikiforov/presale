@@ -50,6 +50,8 @@
                         <td style="border: 1px solid black; text-align: center;" >{{data.tech_writer_days|default_if_none:''}}</td>
                         {% if data.subcontract_name %}
                         <td style="border: 1px solid black;">Работы силами подрядчика: {{data.subcontract_name}}</td>
+                        {% elif data.duration_trip %}
+                        <td style="border: 1px solid black;">Количество дней в командировке: {{data.duration_trip}}</td>
                         {% else %}
                         <td style="border: 1px solid black;">{{comment}}</td>
                         {% endif %}
