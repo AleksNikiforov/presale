@@ -25,6 +25,19 @@ class InstallListView(LoginRequiredMixin, ListView):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
     
+    def get(self, request, *args, **kwargs):
+        # Fetch the designs associated with the current user
+        installs = Install.objects.filter(author=request.user)
+        
+        if installs.exists():
+            # Install exist, pass them to the template context
+            names = installs.values_list('name', flat=True)
+            context = {'installs': installs, 'names': names}
+            return render(request, 'install/install_list.html', context)
+        else:
+            # No Install exist, render the fallback template
+            return render(request, 'install/install_list.html')
+    
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
             data = request.POST
@@ -33,6 +46,7 @@ class InstallListView(LoginRequiredMixin, ListView):
             data = {key: value for key, value in data.items() if key != value}             # удаляем лишние поля из словаря
             checked = data['checked_items'].split(',')                                     # разделяем checked_items и создаем список из его значений
             data.pop("checked_items")                                                      # удаляем checked_items из словаря
+            Install.objects.filter(author=request.user).delete() 
             for item in checked:                                                           # значениям на против которые стоят галочки ставим значение клоичества дней Null
                 data[item] = None
             for n in data.items(): 
