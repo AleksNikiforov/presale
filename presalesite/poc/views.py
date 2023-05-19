@@ -25,6 +25,19 @@ class PocListView(LoginRequiredMixin, ListView):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
     
+    def get(self, request, *args, **kwargs):
+        # Poc the designs associated with the current user
+        pocs = Poc.objects.filter(author=request.user)
+    
+        if pocs.exists():
+            # Examination exist, pass them to the template context
+            names = pocs.values_list('name', flat=True)
+            context = {'pocs': pocs, 'names': names}
+            return render(request, 'poc/poc_list.html', context)
+        else:
+            # No examination exist, render the fallback template
+            return render(request, 'poc/poc_list.html')
+        
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
             data = request.POST
@@ -32,7 +45,8 @@ class PocListView(LoginRequiredMixin, ListView):
             data.pop("csrfmiddlewaretoken")                                                # удаляем лишние поля из словаря
             data = {key: value for key, value in data.items() if key != value}             # удаляем лишние поля из словаря
             checked = data['checked_items'].split(',')                                     # разделяем checked_items и создаем список из его значений
-            data.pop("checked_items")                                                      # удаляем checked_items из словаря
+            data.pop("checked_items")    
+            Poc.objects.filter(author=request.user).delete()                                                     
             for item in checked:                                                           # значениям на против которые стоят галочки ставим значение клоичества дней Null
                 data[item] = None
             for n in data.items():   
