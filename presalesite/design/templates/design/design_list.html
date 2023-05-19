@@ -12,37 +12,37 @@
       <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
       >Проектно-изыскательские работы
       <label for="float-input" style="margin-left:60px;">Трудозатраты, дней:</label>
-      <input type="number" step="0.1" id="Проектно-изыскательские работы" name="Проектно-изыскательские работы" placeholder="кол-во дней" style="width: 120px;" required />
+      <input type="number" step="0.1" id="Проектно-изыскательские работы" name="Проектно-изыскательские работы" placeholder="кол-во дней" style="width: 120px;" required value="{{ designs.0.days }}"/>
       </summary>
       <ul>
         <li class="item1">
           <details style="background-color: rgb(156, 132, 132);">
             <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Проектно-изыскательские работы (Предпроектная стадия)" value="Проектно-изыскательские работы (Предпроектная стадия)">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Проектно-изыскательские работы (Предпроектная стадия)" value="Проектно-изыскательские работы (Предпроектная стадия)" {% if 'Проектно-изыскательские работы (Предпроектная стадия)' in names %} checked {% endif %}>
               Проектно-изыскательские работы (Предпроектная стадия)
             </summary> 
             <ul>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Обследование сетевой инфраструктуры Заказчика" value="Обследование сетевой инфраструктуры Заказчика">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Обследование сетевой инфраструктуры Заказчика" value="Обследование сетевой инфраструктуры Заказчика" {% if 'Обследование сетевой инфраструктуры Заказчика' in names %} checked {% endif %}>
                     Обследование сетевой инфраструктуры Заказчика
                   </summary>
                 </li>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Разработка Технического задания" value="Разработка Технического задания">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Разработка Технического задания" value="Разработка Технического задания" {% if 'Разработка Технического задания' in names %} checked {% endif %}>
                     Разработка Технического задания
                   </summary>
               </li>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Разработка Эскизного проекта" value="Разработка Эскизного проекта">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Разработка Эскизного проекта" value="Разработка Эскизного проекта" {% if 'Разработка Эскизного проекта' in names %} checked {% endif %}>
                     Разработка Эскизного проекта
                   </summary>
               </li>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Разработка Концепции" value="Разработка Концепции">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Разработка Концепции" value="Разработка Концепции" {% if 'Разработка Концепции' in names %} checked {% endif %}>
                     Разработка Концепции
                   </summary>
               </li>
@@ -56,7 +56,7 @@
           <details style="background-color: rgb(172, 165, 165);">
 
             <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Проектно-изыскательские работы (Проектная стадия) (ГОСТ 34)" value="Проектно-изыскательские работы (Проектная стадия) (ГОСТ 34)">
+              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Проектно-изыскательские работы (Проектная стадия) (ГОСТ 34)" value="Проектно-изыскательские работы (Проектная стадия) (ГОСТ 34)" {% if 'Проектно-изыскательские работы (Проектная стадия) (ГОСТ 34)' in names %} checked {% endif %}>
               Проектно-изыскательские работы (Проектная стадия) (ГОСТ 34)
               </summary> 
 
@@ -64,67 +64,67 @@
             <li>
               <details style="background-color: rgb(172, 165, 165);">
                 <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка Технорабочего проекта в составе:" value="Разработка Технорабочего проекта в составе:">
+                  <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="(ГОСТ 34) Разработка Технорабочего проекта в составе:" value="(ГОСТ 34) Разработка Технорабочего проекта в составе:" {% if '(ГОСТ 34) Разработка Технорабочего проекта в составе:' in names %} checked {% endif %}>
                   Разработка Технорабочего проекта в составе:
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Пояснительная записка" value="Пояснительная записка">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Пояснительная записка" value="(ГОСТ 34) Пояснительная записка" {% if '(ГОСТ 34) Пояснительная записка' in names %} checked {% endif %}>
                   Пояснительная записка
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Спецификация оборудования" value="Спецификация оборудования">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Спецификация оборудования" value="(ГОСТ 34) Спецификация оборудования" {% if '(ГОСТ 34) Спецификация оборудования' in names %} checked {% endif %}>
                   Спецификация оборудования
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L1)" value="Физическая схема организации связи (L1)">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Физическая схема организации связи (L1)" value="(ГОСТ 34) Физическая схема организации связи (L1)" {% if '(ГОСТ 34) Физическая схема организации связи (L1)' in names %} checked {% endif %}>
                   Физическая схема организации связи (L1)
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L2)" value="Физическая схема организации связи (L2)">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Физическая схема организации связи (L2)" value="(ГОСТ 34) Физическая схема организации связи (L2)" {% if '(ГОСТ 34) Физическая схема организации связи (L2)' in names %} checked {% endif %}>
                   Физическая схема организации связи (L2)
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L3)" value="Физическая схема организации связи (L3)">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Физическая схема организации связи (L3)" value="(ГОСТ 34) Физическая схема организации связи (L3)" {% if '(ГОСТ 34) Физическая схема организации связи (L3)' in names %} checked {% endif %}>
                   Физическая схема организации связи (L3)
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема маршрутизации" value="Схема маршрутизации">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Схема маршрутизации" value="(ГОСТ 34) Схема маршрутизации" {% if '(ГОСТ 34) Схема маршрутизации' in names %} checked {% endif %}>
                   Схема маршрутизации
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема расположения оборудования в стойках" value="Схема расположения оборудования в стойках">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Схема расположения оборудования в стойках" value="(ГОСТ 34) Схема расположения оборудования в стойках" {% if '(ГОСТ 34) Схема расположения оборудования в стойках' in names %} checked {% endif %}>
                   Схема расположения оборудования в стойках
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема расположения оборудования и кабельных трасс в помещении" value="Схема расположения оборудования и кабельных трасс в помещении">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Схема расположения оборудования и кабельных трасс в помещении" value="(ГОСТ 34) Схема расположения оборудования и кабельных трасс в помещении" {% if '(ГОСТ 34) Схема расположения оборудования и кабельных трасс в помещении' in names %} checked {% endif %}>
                   Схема расположения оборудования и кабельных трасс в помещении
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Таблица кабельных соединений" value="Таблица кабельных соединений">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Таблица кабельных соединений" value="(ГОСТ 34) Таблица кабельных соединений" {% if '(ГОСТ 34) Таблица кабельных соединений' in names %} checked {% endif %}>
                   Таблица кабельных соединений
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схемы адресации" value="Схемы адресации">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Схемы адресации" value="(ГОСТ 34) Схемы адресации" {% if '(ГОСТ 34) Схемы адресации' in names %} checked {% endif %}>
                   Схемы адресации
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Отчет по моделированию радиопокрытия беспроводной сети" value="Отчет по моделированию радиопокрытия беспроводной сети">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Отчет по моделированию радиопокрытия беспроводной сети" value="(ГОСТ 34) Отчет по моделированию радиопокрытия беспроводной сети" {% if '(ГОСТ 34) Отчет по моделированию радиопокрытия беспроводной сети' in names %} checked {% endif %}>
                   Отчет по моделированию радиопокрытия беспроводной сети
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема крепления беспроводных точек доступа" value="Схема крепления беспроводных точек доступа">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Схема крепления беспроводных точек доступа" value="(ГОСТ 34) Схема крепления беспроводных точек доступа" {% if '(ГОСТ 34) Схема крепления беспроводных точек доступа' in names %} checked {% endif %}>
                   Схема крепления беспроводных точек доступа
                 </summary>
               </li>
@@ -132,17 +132,17 @@
             <li>
               <details style="background-color: rgb(172, 165, 165);">
                 <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка Эксплуатационной документации в составе:" value="Разработка Эксплуатационной документации в составе:">
+                  <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="(ГОСТ 34) Разработка Эксплуатационной документации в составе:" value="(ГОСТ 34) Разработка Эксплуатационной документации в составе:" {% if '(ГОСТ 34) Разработка Эксплуатационной документации в составе:' in names %} checked {% endif %}>
                   Разработка Эксплуатационной документации в составе:
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Описание настроек" value="Описание настроек">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Описание настроек" value="(ГОСТ 34) Описание настроек" {% if '(ГОСТ 34) Описание настроек' in names %} checked {% endif %}>
                   Описание настроек
                 </summary>
 
                 <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Руководство администратора" value="Руководство администратора">
+                  <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 34) Руководство администратора" value="(ГОСТ 34) Руководство администратора" {% if '(ГОСТ 34) Руководство администратора' in names %} checked {% endif %}>
                   Руководство администратора
                 </summary>
             </li>
@@ -150,13 +150,13 @@
         </ul>
         <li>
           <summary style="margin-left:83px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-left:52px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка Программы и методики испытаний" value="Разработка Программы и методики испытаний">
+            <input type="checkbox" style="margin-left:52px;" style="margin-right:10px;" class="list-item-checkbox" name="(ГОСТ 34) Разработка Программы и методики испытаний" value="(ГОСТ 34) Разработка Программы и методики испытаний" {% if '(ГОСТ 34) Разработка Программы и методики испытаний' in names %} checked {% endif %}>
             Разработка Программы и методики испытаний
           </summary>
         </li>
         <li>
           <summary style="margin-left:83px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-left:52px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка Плана производства работ" value="Разработка Плана производства работ">
+            <input type="checkbox" style="margin-left:52px;" style="margin-right:10px;" class="list-item-checkbox" name="(ГОСТ 34) Разработка Плана производства работ" value="(ГОСТ 34) Разработка Плана производства работ" {% if '(ГОСТ 34) Разработка Плана производства работ' in names %} checked {% endif %}>
             Разработка Плана производства работ
           </summary>
         </li>
@@ -172,7 +172,7 @@
         <details style="background-color: rgb(156, 132, 132);">
 
           <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Проектно-изыскательские работы (ГОСТ 21)" value="Проектно-изыскательские работы (ГОСТ 21)">
+            <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Проектно-изыскательские работы (ГОСТ 21)" value="Проектно-изыскательские работы (ГОСТ 21)" {% if 'Проектно-изыскательские работы (ГОСТ 21)' in names %} checked {% endif %}>
             Проектно-изыскательские работы (ГОСТ 21)
           </summary> 
 
@@ -180,32 +180,32 @@
           <li>
             <details style="background-color: rgb(156, 132, 132);">
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка Проектной документации в составе:" value="Разработка Проектной документации в составе:">
+                <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="(ГОСТ 21) Разработка Проектной документации в составе:" value="(ГОСТ 21) Разработка Проектной документации в составе:" {% if '(ГОСТ 21) Разработка Проектной документации в составе:' in names %} checked {% endif %}>
                 Разработка Проектной документации в составе:
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Раздел 1. Пояснительная записка" value="Раздел 1. Пояснительная записка">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Раздел 1. Пояснительная записка" value="(ГОСТ 21) Раздел 1. Пояснительная записка" {% if '(ГОСТ 21) Раздел 1. Пояснительная записка' in names %} checked {% endif %}>
                 Раздел 1. Пояснительная записка
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Раздел 5. Сведения об инженерном оборудовании (Подраздел д: Сети связи)" value="Раздел 5. Сведения об инженерном оборудовании (Подраздел д: Сети связи)">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Раздел 5. Сведения об инженерном оборудовании (Подраздел д: Сети связи)" value="(ГОСТ 21) Раздел 5. Сведения об инженерном оборудовании (Подраздел д: Сети связи)" {% if '(ГОСТ 21) Раздел 5. Сведения об инженерном оборудовании (Подраздел д: Сети связи)' in names %} checked {% endif %}>
                 Раздел 5. Сведения об инженерном оборудовании (Подраздел д: "Сети связи")
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Раздел 8. Перечень мероприятий по охране окружающей среды" value="Раздел 8. Перечень мероприятий по охране окружающей среды">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Раздел 8. Перечень мероприятий по охране окружающей среды" value="(ГОСТ 21) Раздел 8. Перечень мероприятий по охране окружающей среды" {% if '(ГОСТ 21) Раздел 8. Перечень мероприятий по охране окружающей среды' in names %} checked {% endif %}>
                 Раздел 8. Перечень мероприятий по охране окружающей среды
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Раздел 9. Мероприятия по обеспечению пожарной безопасности" value="Раздел 9. Мероприятия по обеспечению пожарной безопасности">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Раздел 9. Мероприятия по обеспечению пожарной безопасности" value="(ГОСТ 21) Раздел 9. Мероприятия по обеспечению пожарной безопасности" {% if '(ГОСТ 21) Раздел 9. Мероприятия по обеспечению пожарной безопасности' in names %} checked {% endif %}>
                 Раздел 9. Мероприятия по обеспечению пожарной безопасности
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Раздел 12. Иная документация в случаях, предусмотренных федеральными законами" value="Раздел 12. Иная документация в случаях, предусмотренных федеральными законами">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Раздел 12. Иная документация в случаях, предусмотренных федеральными законами" value="(ГОСТ 21) Раздел 12. Иная документация в случаях, предусмотренных федеральными законами" {% if '(ГОСТ 21) Раздел 12. Иная документация в случаях, предусмотренных федеральными законами' in names %} checked {% endif %}>
                 Раздел 12. Иная документация в случаях, предусмотренных федеральными законами
               </summary>
             </li>
@@ -213,67 +213,67 @@
           <li>
             <details style="background-color: rgb(156, 132, 132);">
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка Рабочей документации в составе:" value="Разработка Рабочей документации в составе:">
+                <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="(ГОСТ 21) Разработка Рабочей документации в составе:" value="(ГОСТ 21) Разработка Рабочей документации в составе:" {% if '(ГОСТ 21) Разработка Рабочей документации в составе:' in names %} checked {% endif %}>
                 Разработка Рабочей документации в составе:
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Общая схема решения" value="Общая схема решения">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Общая схема решения" value="(ГОСТ 21) Общая схема решения" {% if '(ГОСТ 21) Общая схема решения' in names %} checked {% endif %}>
                 Общая схема решения
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L1)" value="Физическая схема организации связи (L1)">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Физическая схема организации связи (L1)" value="(ГОСТ 21) Физическая схема организации связи (L1)" {% if '(ГОСТ 21) Физическая схема организации связи (L1)' in names %} checked {% endif %}>
                 Физическая схема организации связи (L1)
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L2)" value="Физическая схема организации связи (L2)">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Физическая схема организации связи (L2)" value="(ГОСТ 21) Физическая схема организации связи (L2)" {% if '(ГОСТ 21) Физическая схема организации связи (L2)' in names %} checked {% endif %}>
                 Физическая схема организации связи (L2)
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L3)" value="Физическая схема организации связи (L3)">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Физическая схема организации связи (L3)" value="(ГОСТ 21) Физическая схема организации связи (L3)" {% if '(ГОСТ 21) Физическая схема организации связи (L3)' in names %} checked {% endif %}> 
                 Физическая схема организации связи (L3)
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема маршрутизации" value="Схема маршрутизации">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Схема маршрутизации" value="(ГОСТ 21) Схема маршрутизации" {% if '(ГОСТ 21) Схема маршрутизации' in names %} checked {% endif %}>
                 Схема маршрутизации
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема расположения оборудования в стойках" value="Схема расположения оборудования в стойках">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Схема расположения оборудования в стойках" value="(ГОСТ 21) Схема расположения оборудования в стойках" {% if '(ГОСТ 21) Схема расположения оборудования в стойках' in names %} checked {% endif %}>
                 Схема расположения оборудования в стойках
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема расположения оборудования и кабельных трасс в помещении" value="Схема расположения оборудования и кабельных трасс в помещении">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Схема расположения оборудования и кабельных трасс в помещении" value="(ГОСТ 21) Схема расположения оборудования и кабельных трасс в помещении" {% if '(ГОСТ 21) Схема расположения оборудования и кабельных трасс в помещении' in names %} checked {% endif %}>
                 Схема расположения оборудования и кабельных трасс в помещении
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Принципиальная схема распределительной сети ~220В" value="Принципиальная схема распределительной сети ~220В">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Принципиальная схема распределительной сети ~220В" value="(ГОСТ 21) Принципиальная схема распределительной сети ~220В" {% if '(ГОСТ 21) Принципиальная схема распределительной сети ~220В' in names %} checked {% endif %}>
                 Принципиальная схема распределительной сети ~220В
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Принципиальная схема заземления" value="Принципиальная схема заземления">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Принципиальная схема заземления" value="(ГОСТ 21) Принципиальная схема заземления" {% if '(ГОСТ 21) Принципиальная схема заземления' in names %} checked {% endif %}>
                 Принципиальная схема заземления
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Таблица кабельных соединений" value="Таблица кабельных соединений">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Таблица кабельных соединений" value="(ГОСТ 21) Таблица кабельных соединений" {% if '(ГОСТ 21) Таблица кабельных соединений' in names %} checked {% endif %}>
                 Таблица кабельных соединений
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схемы адресации" value="Схемы адресации">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Схемы адресации" value="(ГОСТ 21) Схемы адресации" {% if '(ГОСТ 21) Схемы адресации' in names %} checked {% endif %}>
                 Схемы адресации
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Программа и методика испытаний" value="Программа и методика испытаний">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Программа и методика испытаний" value="(ГОСТ 21) Программа и методика испытаний" {% if '(ГОСТ 21) Программа и методика испытаний' in names %} checked {% endif %}>
                 Программа и методика испытаний
               </summary>
           </li>
@@ -281,57 +281,57 @@
           <li>
             <details style="background-color: rgb(156, 132, 132);">
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка Исполнительной документации в составе:" value="Разработка Исполнительной документации в составе:">
+                <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="(ГОСТ 21) Разработка Исполнительной документации в составе:" value="(ГОСТ 21) Разработка Исполнительной документации в составе:" {% if '(ГОСТ 21) Разработка Исполнительной документации в составе:' in names %} checked {% endif %}>
                 Разработка Исполнительной документации в составе:
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L1)" value="Физическая схема организации связи (L1)">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Физическая схема организации связи (L1)" value="(ГОСТ 21) Физическая схема организации связи (L1)" {% if '(ГОСТ 21) Физическая схема организации связи (L1)' in names %} checked {% endif %}>
                 Физическая схема организации связи (L1)
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L2)" value="Физическая схема организации связи (L2)">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Физическая схема организации связи (L2)" value="(ГОСТ 21) Физическая схема организации связи (L2)" {% if '(ГОСТ 21) Физическая схема организации связи (L2)' in names %} checked {% endif %}>
                 Физическая схема организации связи (L2)
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L3)" value="Физическая схема организации связи (L3)">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Физическая схема организации связи (L3)" value="(ГОСТ 21) Физическая схема организации связи (L3)" {% if '(ГОСТ 21) Физическая схема организации связи (L3)' in names %} checked {% endif %}>
                 Физическая схема организации связи (L3)
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема маршрутизации" value="Схема маршрутизации">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Схема маршрутизации" value="(ГОСТ 21) Схема маршрутизации" {% if '(ГОСТ 21) Схема маршрутизации' in names %} checked {% endif %}>
                 Схема маршрутизации
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема расположения оборудования в стойках" value="Схема расположения оборудования в стойках">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Схема расположения оборудования в стойках" value="(ГОСТ 21) Схема расположения оборудования в стойках" {% if '(ГОСТ 21) Схема расположения оборудования в стойках' in names %} checked {% endif %}>
                 Схема расположения оборудования в стойках
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема расположения оборудования и кабельных трасс в помещении" value="Схема расположения оборудования и кабельных трасс в помещении">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Схема расположения оборудования и кабельных трасс в помещении" value="(ГОСТ 21) Схема расположения оборудования и кабельных трасс в помещении" {% if '(ГОСТ 21) Схема расположения оборудования и кабельных трасс в помещении' in names %} checked {% endif %}>
                 Схема расположения оборудования и кабельных трасс в помещении
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Принципиальная схема распределительной сети ~220В" value="Принципиальная схема распределительной сети ~220В">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Принципиальная схема распределительной сети ~220В" value="(ГОСТ 21) Принципиальная схема распределительной сети ~220В" {% if '(ГОСТ 21) Принципиальная схема распределительной сети ~220В' in names %} checked {% endif %}>
                 Принципиальная схема распределительной сети ~220В
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Принципиальная схема заземления" value="Принципиальная схема заземления">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Принципиальная схема заземления" value="(ГОСТ 21) Принципиальная схема заземления" {% if '(ГОСТ 21) Принципиальная схема заземления' in names %} checked {% endif %}>
                 Принципиальная схема заземления
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Таблица кабельных соединений" value="Таблица кабельных соединений">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Таблица кабельных соединений" value="(ГОСТ 21) Таблица кабельных соединений" {% if '(ГОСТ 21) Таблица кабельных соединений' in names %} checked {% endif %}>
                 Таблица кабельных соединений
               </summary>
 
               <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схемы адресации" value="Схемы адресации">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(ГОСТ 21) Схемы адресации" value="(ГОСТ 21) Схемы адресации" {% if '(ГОСТ 21) Схемы адресации' in names %} checked {% endif %}>
                 Схемы адресации
               </summary>
           </li>
@@ -339,7 +339,7 @@
       </ul>
       <li>
         <summary style="margin-left:83px; font-weight:normal; cursor: pointer;">
-          <input type="checkbox" style="margin-left:52px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка Локального сметного расчета" value="Разработка Локального сметного расчета">
+          <input type="checkbox" style="margin-left:52px;" style="margin-right:10px;" class="list-item-checkbox" name="(ГОСТ 21) Разработка Локального сметного расчета" value="(ГОСТ 21) Разработка Локального сметного расчета" {% if '(ГОСТ 21) Разработка Локального сметного расчета' in names %} checked {% endif %}>
           Разработка Локального сметного расчета
         </summary>
       </li>
@@ -355,7 +355,7 @@
       <details style="background-color: rgb(172, 165, 165);">
 
         <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-          <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Проектно-изыскательские работы (Сокращенная версия)" value="Проектно-изыскательские работы (Сокращенная версия)">
+          <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Проектно-изыскательские работы (Сокращенная версия)" value="Проектно-изыскательские работы (Сокращенная версия)" {% if 'Проектно-изыскательские работы (Сокращенная версия)' in names %} checked {% endif %}>
           Проектно-изыскательские работы (Сокращенная версия)
         </summary> 
 
@@ -363,77 +363,77 @@
         <li>
           <details style="background-color: rgb(172, 165, 165);">
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="Разработка проектной документации в составе:" value="Разработка проектной документации в составе:">
+              <input type="checkbox" style="margin-left:20px;" style="margin-right:10px;" class="list-item-checkbox" name="(Сокращенная версия) Разработка проектной документации в составе:" value="(Сокращенная версия) Разработка проектной документации в составе:" {% if '(Сокращенная версия) Разработка проектной документации в составе:' in names %} checked {% endif %}>
               Разработка проектной документации в составе:
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Техническое задание (требования)" value="Техническое задание (требования)">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Техническое задание (требования)" value="(Сокращенная версия) Техническое задание (требования)" {% if '(Сокращенная версия) Техническое задание (требования)' in names %} checked {% endif %}>
               Техническое задание (требования)
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Краткая пояснительная записка" value="Краткая пояснительная записка">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Краткая пояснительная записка" value="(Сокращенная версия) Краткая пояснительная записка" {% if '(Сокращенная версия) Краткая пояснительная записка' in names %} checked {% endif %}> 
               Краткая пояснительная записка
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Спецификация оборудования" value="Спецификация оборудования">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Спецификация оборудования" value="(Сокращенная версия) Спецификация оборудования" {% if '(Сокращенная версия) Спецификация оборудования' in names %} checked {% endif %}>
               Спецификация оборудования
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L1)" value="Физическая схема организации связи (L1)">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Физическая схема организации связи (L1)" value="(Сокращенная версия) Физическая схема организации связи (L1)" {% if '(Сокращенная версия) Физическая схема организации связи (L1)' in names %} checked {% endif %}>
               Физическая схема организации связи (L1)
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L2)" value="Физическая схема организации связи (L2)">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Физическая схема организации связи (L2)" value="(Сокращенная версия) Физическая схема организации связи (L2)" {% if '(Сокращенная версия) Физическая схема организации связи (L2)' in names %} checked {% endif %}>
               Физическая схема организации связи (L2)
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Физическая схема организации связи (L3)" value="Физическая схема организации связи (L3)">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Физическая схема организации связи (L3)" value="(Сокращенная версия) Физическая схема организации связи (L3)" {% if '(Сокращенная версия) Физическая схема организации связи (L3)' in names %} checked {% endif %}>
               Физическая схема организации связи (L3)
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема маршрутизации" value="Схема маршрутизации">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Схема маршрутизации" value="(Сокращенная версия) Схема маршрутизации" {% if '(Сокращенная версия) Схема маршрутизации' in names %} checked {% endif %}>
               Схема маршрутизации
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема расположения оборудования в стойках" value="Схема расположения оборудования в стойках">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Схема расположения оборудования в стойках" value="(Сокращенная версия) Схема расположения оборудования в стойках" {% if '(Сокращенная версия) Схема расположения оборудования в стойках' in names %} checked {% endif %}>
               Схема расположения оборудования в стойках
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схема расположения оборудования и кабельных трасс в помещении" value="Схема расположения оборудования и кабельных трасс в помещении">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Схема расположения оборудования и кабельных трасс в помещении" value="(Сокращенная версия) Схема расположения оборудования и кабельных трасс в помещении" {% if '(Сокращенная версия) Схема расположения оборудования и кабельных трасс в помещении' in names %} checked {% endif %}>
               Схема расположения оборудования и кабельных трасс в помещении
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Таблица кабельных соединений" value="Таблица кабельных соединений">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Таблица кабельных соединений" value="(Сокращенная версия) Таблица кабельных соединений" {% if '(Сокращенная версия) Таблица кабельных соединений' in names %} checked {% endif %}>
               Таблица кабельных соединений
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Схемы адресации" value="Схемы адресации">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Схемы адресации" value="(Сокращенная версия) Схемы адресации" {% if '(Сокращенная версия) Схемы адресации' in names %} checked {% endif %}>
               Схемы адресации
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="План производства работ" value="План производства работ">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) План производства работ" value="(Сокращенная версия) План производства работ" {% if '(Сокращенная версия) План производства работ' in names %} checked {% endif %}>
               План производства работ
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="План миграции" value="План миграции">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) План миграции" value="(Сокращенная версия) План миграции" {% if '(Сокращенная версия) План миграции' in names %} checked {% endif %}>
               План миграции
             </summary>
 
             <summary style="margin-left:120px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Программа и методика испытаний" value="Программа и методика испытаний">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="(Сокращенная версия) Программа и методика испытаний" value="(Сокращенная версия) Программа и методика испытаний" {% if '(Сокращенная версия) Программа и методика испытаний' in names %} checked {% endif %}>
               Программа и методика испытаний
             </summary>
 
