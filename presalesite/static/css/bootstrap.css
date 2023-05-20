@@ -116,7 +116,7 @@ body {
 
 @keyframes flashin-border {
   0% {
-      border-color: orange;
+      border-color: rgb(105, 103, 98);
   }
 
   50% {
@@ -124,7 +124,7 @@ body {
   }
 
   100% {
-      border-color: orange;
+      border-color: rgb(105, 103, 98);
   }
 }
 
@@ -203,7 +203,7 @@ body {
 .nav-item.nav-link:active,
 .nav-item.nav-link:focus,
 .nav-item.nav-link:hover {
-  background-color: rgb(235, 235, 18);
+  background-color: rgb(175, 175, 171);
   position: relative; /* добавляем относительное позиционирование, чтобы можно было задать координаты всплывающей подсказки */
 }
 
@@ -3952,15 +3952,15 @@ textarea.form-control-lg {
 }
 
 .navbar .nav-link[title="Статус авторизации"] {
-  color: red;
+  color: rgb(88, 84, 84);
 }
 
 .navbar .nav-link[title="Авторизация"] {
-  color: red;
+  color: rgb(88, 84, 84);
 }
 
 .navbar .nav-link[title="Выйти"] {
-  color: red;
+  color: rgb(88, 84, 84);
 }
 
 .form-container {
