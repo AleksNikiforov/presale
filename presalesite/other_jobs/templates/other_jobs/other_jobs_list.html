@@ -12,32 +12,32 @@
       <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
       >Прочие работы
       <label for="float-input" style="margin-left:60px;">Трудозатраты, дней:</label>
-      <input type="number" step="0.1" id="Прочие работы" name="Прочие работы" placeholder="кол-во дней" style="width: 120px;" required />
+      <input type="number" step="0.1" id="Прочие работы" name="Прочие работы" placeholder="кол-во дней" style="width: 120px;" required required value="{{ other_jobs.0.days }}"/>
       </summary>
       <ul>
         <li class="item1">
           <details style="background-color: rgb(172, 165, 165);">
             <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Приемка оборудования" value="Приемка оборудования">
+              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Приемка оборудования" value="Приемка оборудования" {% if 'Приемка оборудования' in names %} checked {% endif %}>
               Приемка оборудования
             </summary> 
             <ul>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Приемка оборудования на площадке Заказчика" value="Приемка оборудования на площадке Заказчика">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Приемка оборудования на площадке Заказчика" value="Приемка оборудования на площадке Заказчика" {% if 'Приемка оборудования на площадке Заказчика' in names %} checked {% endif %}> 
                     Приемка оборудования на площадке Заказчика
                   </summary>
                 </li>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Приемка оборудования на площадке Исполнителя" value="Приемка оборудования на площадке Исполнителя">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Приемка оборудования на площадке Исполнителя" value="Приемка оборудования на площадке Исполнителя" {% if 'Приемка оборудования на площадке Исполнителя' in names %} checked {% endif %}>
                     Приемка оборудования на площадке Исполнителя
                   </summary>
               </li>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Приемка оборудования на площадке третьих ли" value="Приемка оборудования на площадке третьих ли">
-                    Приемка оборудования на площадке третьих ли
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Приемка оборудования на площадке третьих лиц" value="Приемка оборудования на площадке третьих лиц" {% if 'Приемка оборудования на площадке третьих лиц' in names %} checked {% endif %}>
+                    Приемка оборудования на площадке третьих лиц
                   </summary>
               </li>
           </ul>
