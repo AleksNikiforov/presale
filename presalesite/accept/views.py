@@ -25,6 +25,19 @@ class AcceptListView(LoginRequiredMixin, ListView):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
     
+    def get(self, request, *args, **kwargs):
+        # Fetch the Accept associated with the current user
+        accepts = Accept.objects.filter(author=request.user)
+        
+        if accepts.exists():
+            # Accept exist, pass them to the template context
+            names = accepts.values_list('name', flat=True)
+            context = {'accepts': accepts, 'names': names}
+            return render(request, 'accept/accept_list.html', context)
+        else:
+            # No Accept exist, render the fallback template
+            return render(request, 'accept/accept_list.html')
+    
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
             data = request.POST
@@ -32,7 +45,8 @@ class AcceptListView(LoginRequiredMixin, ListView):
             data.pop("csrfmiddlewaretoken")                                                # удаляем лишние поля из словаря
             data = {key: value for key, value in data.items() if key != value}             # удаляем лишние поля из словаря
             checked = data['checked_items'].split(',')                                     # разделяем checked_items и создаем список из его значений
-            data.pop("checked_items")                                                      # удаляем checked_items из словаря
+            data.pop("checked_items") 
+            Accept.objects.filter(author=request.user).delete()                                                     # удаляем checked_items из словаря
             for item in checked:                                                           # значениям на против которые стоят галочки ставим значение клоичества дней Null
                 data[item] = None
             for n in data.items():   
