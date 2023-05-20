@@ -18,6 +18,27 @@ from businesstrip.models import BusinessTrip
 from .forms import *
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+
+def delete_all(request):
+
+    Design.objects.filter(author=request.user).delete()
+    Examination.objects.filter(author=request.user).delete()
+    Poc.objects.filter(author=request.user).delete()
+    Rates.objects.filter(author=request.user).delete()
+    Install.objects.filter(author=request.user).delete()
+    Commissioning.objects.filter(author=request.user).delete()
+    Accept.objects.filter(author=request.user).delete()
+    Migration.objects.filter(author=request.user).delete()
+    Other_jobs.objects.filter(author=request.user).delete()
+    Subcontractor.objects.filter(author=request.user).delete()
+    Other.objects.filter(author=request.user).delete()
+    BusinessTrip.objects.filter(author=request.user).delete()
+
+    message = "Все записи успешно удалены"
+    messages.success(request, message)
+    return redirect('Home')
 
 
 @login_required(login_url=settings.LOGIN_URL)
