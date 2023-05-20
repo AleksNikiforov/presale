@@ -22,6 +22,19 @@ class CommissioningListView(LoginRequiredMixin, ListView):
 
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
+    
+    def get(self, request, *args, **kwargs):
+        # Fetch the designs associated with the current user
+        commissionings = Commissioning.objects.filter(author=request.user)
+        
+        if commissionings.exists():
+            # Commissioning exist, pass them to the template context
+            names = commissionings.values_list('name', flat=True)
+            context = {'commissionings': commissionings, 'names': names}
+            return render(request, 'commissioning/commissioning_list.html', context)
+        else:
+            # No Commissioning exist, render the fallback template
+            return render(request, 'commissioning/commissioning_list.html')
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
@@ -30,7 +43,8 @@ class CommissioningListView(LoginRequiredMixin, ListView):
             data.pop("csrfmiddlewaretoken")                                                # удаляем лишние поля из словаря
             data = {key: value for key, value in data.items() if key != value}             # удаляем лишние поля из словаря
             checked = data['checked_items'].split(',')                                     # разделяем checked_items и создаем список из его значений
-            data.pop("checked_items")                                                      # удаляем checked_items из словаря
+            data.pop("checked_items")  
+            Commissioning.objects.filter(author=request.user).delete()                                                    
             for item in checked:                                                           # значениям на против которые стоят галочки ставим значение клоичества дней Null
                 data[item] = None
             for n in data.items():

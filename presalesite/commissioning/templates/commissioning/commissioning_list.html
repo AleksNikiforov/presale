@@ -12,20 +12,20 @@
       <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
       >Пуско-наладочные работы
       <label for="float-input" style="margin-left:60px;">Трудозатраты, дней:</label>
-      <input type="number" step="0.1" id="Пуско-наладочные работы" name="Пуско-наладочные работы" placeholder="кол-во дней" style="width: 120px;" required />
-      </summary>
+      <input type="number" step="0.1" id="Пуско-наладочные работы" name="Пуско-наладочные работы" placeholder="кол-во дней" style="width: 120px;" required value="{{ commissionings.0.days }}"/>
+    </summary>
       <ul>
         <li class="item1">
           <details style="background-color: rgb(172, 165, 165);">
             <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Подготовка шаблонов конфигурации сетевых устройств" value="Подготовка шаблонов конфигурации сетевых устройств">
+              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Подготовка шаблонов конфигурации сетевых устройств" value="Подготовка шаблонов конфигурации сетевых устройств" {% if 'Подготовка шаблонов конфигурации сетевых устройств' in names %} checked {% endif %}>
               Подготовка шаблонов конфигурации сетевых устройств
             </summary> 
             <ul>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подготовка шаблонов конфигурации сетевых устройств" value="Подготовка шаблонов конфигурации сетевых устройств">
-                    Подготовка шаблонов конфигурации сетевых устройств
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подготовка шаблонов конфигурации для сетевых устройств" value="Подготовка шаблонов конфигурации для сетевых устройств" {% if 'Подготовка шаблонов конфигурации для сетевых устройств' in names %} checked {% endif %}>
+                    Подготовка шаблонов конфигурации для сетевых устройств
                   </summary>
                 </li>
           </ul>
@@ -35,67 +35,67 @@
         <li>
           <details style="background-color: rgb(172, 165, 165);">
             <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов доступа LAN" value="Пуско-наладка коммутаторов доступа LAN">
+              <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов доступа LAN" value="Пуско-наладка коммутаторов доступа LAN" {% if 'Пуско-наладка коммутаторов доступа LAN' in names %} checked {% endif %}>
               Пуско-наладка коммутаторов доступа LAN
               </summary> 
               <ul>
                 <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов доступа LAN" value="Установка/обновление программного обеспечения коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов доступа LAN" value="Установка/обновление программного обеспечения коммутаторов доступа LAN" {% if 'Установка/обновление программного обеспечения коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Установка/обновление программного обеспечения
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов доступа LAN" value="Установка и активация лицензий коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов доступа LAN" value="Установка и активация лицензий коммутаторов доступа LAN" {% if 'Установка и активация лицензий коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Установка и активация лицензий
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов доступа LAN" value="Базовая настройка оборудования включая стекирование коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов доступа LAN" value="Базовая настройка оборудования включая стекирование коммутаторов доступа LAN" {% if 'Базовая настройка оборудования включая стекирование коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Базовая настройка оборудования включая стекирование
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов доступа LAN" value="Настройка параметров коммутации/маршрутизации коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов доступа LAN" value="Настройка параметров коммутации/маршрутизации коммутаторов доступа LAN" {% if 'Настройка параметров коммутации/маршрутизации коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Настройка параметров коммутации/маршрутизации
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN коммутаторов доступа LAN" value="Встраивание в сеть передачи данных LAN коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN коммутаторов доступа LAN" value="Встраивание в сеть передачи данных LAN коммутаторов доступа LAN" {% if 'Встраивание в сеть передачи данных LAN коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Встраивание в сеть передачи данных LAN
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов доступа LAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов доступа LAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов доступа LAN" {% if 'Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов доступа LAN" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов доступа LAN" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов доступа LAN" {% if 'Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...)
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов доступа LAN" value="Настройка QoS коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов доступа LAN" value="Настройка QoS коммутаторов доступа LAN" {% if 'Настройка QoS коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Настройка QoS
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка пользовательских портов коммутаторов доступа LAN" value="Настройка пользовательских портов коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка пользовательских портов коммутаторов доступа LAN" value="Настройка пользовательских портов коммутаторов доступа LAN" {% if 'Настройка пользовательских портов коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Настройка пользовательских портов
                     </summary>
                   </li>
                   <li>
                     <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети коммутаторов доступа LAN" value="Подключение тестовых пользователей и отладка работы системы/сети коммутаторов доступа LAN">
+                      <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети коммутаторов доступа LAN" value="Подключение тестовых пользователей и отладка работы системы/сети коммутаторов доступа LAN" {% if 'Подключение тестовых пользователей и отладка работы системы/сети коммутаторов доступа LAN' in names %} checked {% endif %}>
                       Подключение тестовых пользователей и отладка работы системы/сети
                     </summary>
                   </li>
@@ -107,61 +107,61 @@
         <details style="background-color: rgb(172, 165, 165);"> 
 
           <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов ядра/агрегации" value="Пуско-наладка коммутаторов ядра/агрегации">
+            <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов ядра/агрегации" value="Пуско-наладка коммутаторов ядра/агрегации" {% if 'Пуско-наладка коммутаторов ядра/агрегации' in names %} checked {% endif %}>
             Пуско-наладка коммутаторов ядра/агрегации
             </summary> 
             <ul>
               <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов ядра/агрегации" value="Установка/обновление программного обеспечения коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов ядра/агрегации" value="Установка/обновление программного обеспечения коммутаторов ядра/агрегации" {% if 'Установка/обновление программного обеспечения коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Установка/обновление программного обеспечения коммутаторов ядра/агрегации
                   </summary>
                 </li>
                 <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов ядра/агрегации" value="Установка и активация лицензий коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов ядра/агрегации" value="Установка и активация лицензий коммутаторов ядра/агрегации" {% if 'Установка и активация лицензий коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Установка и активация лицензий
                   </summary>
                 </li>
                 <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов ядра/агрегации" value="Базовая настройка оборудования включая стекирование коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов ядра/агрегации" value="Базовая настройка оборудования включая стекирование коммутаторов ядра/агрегации" {% if 'Базовая настройка оборудования включая стекирование коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Базовая настройка оборудования включая стекирование
                   </summary>
                 </li>
                 <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов ядра/агрегации" value="Настройка параметров коммутации/маршрутизации коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов ядра/агрегации" value="Настройка параметров коммутации/маршрутизации коммутаторов ядра/агрегации" {% if 'Настройка параметров коммутации/маршрутизации коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Настройка параметров коммутации/маршрутизации
                   </summary>
                 </li>
                 <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN коммутаторов ядра/агрегации" value="Встраивание в сеть передачи данных LAN/WAN коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN коммутаторов ядра/агрегации" value="Встраивание в сеть передачи данных LAN/WAN коммутаторов ядра/агрегации" {% if 'Встраивание в сеть передачи данных LAN/WAN коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Встраивание в сеть передачи данных LAN/WAN
                   </summary>
                 </li>
                 <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов ядра/агрегации" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов ядра/агрегации" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов ядра/агрегации" {% if 'Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
                   </summary>
                 </li>
                 <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов ядра/агрегации" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов ядра/агрегации" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов ядра/агрегации" {% if 'Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...)
                   </summary>
                 </li>
                 <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов ядра/агрегации" value="Настройка QoS коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов ядра/агрегации" value="Настройка QoS коммутаторов ядра/агрегации" {% if 'Настройка QoS коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Настройка QoS
                   </summary>
                 </li>
                 <li>
                   <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети коммутаторов ядра/агрегации" value="Подключение тестового оборудования и отладка работы системы/сети коммутаторов ядра/агрегации">
+                    <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети коммутаторов ядра/агрегации" value="Подключение тестового оборудования и отладка работы системы/сети коммутаторов ядра/агрегации" {% if 'Подключение тестового оборудования и отладка работы системы/сети коммутаторов ядра/агрегации' in names %} checked {% endif %}>
                     Подключение тестового оборудования и отладка работы системы/сети
                   </summary>
                 </li>
@@ -172,55 +172,55 @@
       <details style="background-color: rgb(172, 165, 165);">
 
         <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-          <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка граничных коммутаторов WAN" value="Пуско-наладка граничных коммутаторов WAN">
+          <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка граничных коммутаторов WAN" value="Пуско-наладка граничных коммутаторов WAN" {% if 'Пуско-наладка граничных коммутаторов WAN' in names %} checked {% endif %}>
           Пуско-наладка граничных коммутаторов WAN
         </summary> 
         <ul>
           <li>
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения граничных коммутаторов WAN" value="Установка/обновление программного обеспечения граничных коммутаторов WAN">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения граничных коммутаторов WAN" value="Установка/обновление программного обеспечения граничных коммутаторов WAN" {% if 'Установка/обновление программного обеспечения граничных коммутаторов WAN' in names %} checked {% endif %}>
                 Установка/обновление программного обеспечения
               </summary>
             </li>
             <li>
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий граничных коммутаторов WAN" value="Установка и активация лицензий граничных коммутаторов WAN">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий граничных коммутаторов WAN" value="Установка и активация лицензий граничных коммутаторов WAN" {% if 'Установка и активация лицензий граничных коммутаторов WAN' in names %} checked {% endif %}>
                 Установка и активация лицензий
               </summary>
             </li>
             <li>
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование граничных коммутаторов WAN" value="Базовая настройка оборудования включая стекирование граничных коммутаторов WAN">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование граничных коммутаторов WAN" value="Базовая настройка оборудования включая стекирование граничных коммутаторов WAN" {% if 'Базовая настройка оборудования включая стекирование граничных коммутаторов WAN' in names %} checked {% endif %}>
                 Базовая настройка оборудования включая стекирование
               </summary>
             </li>
             <li>
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации граничных коммутаторов WAN" value="Настройка параметров коммутации/маршрутизации граничных коммутаторов WAN">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации граничных коммутаторов WAN" value="Настройка параметров коммутации/маршрутизации граничных коммутаторов WAN" {% if 'Настройка параметров коммутации/маршрутизации граничных коммутаторов WAN' in names %} checked {% endif %}>
                 Настройка параметров коммутации/маршрутизации
               </summary>
             </li>
             <li>
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN граничных коммутаторов WAN" value="Встраивание в сеть передачи данных LAN/WAN граничных коммутаторов WAN">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN граничных коммутаторов WAN" value="Встраивание в сеть передачи данных LAN/WAN граничных коммутаторов WAN" {% if 'Встраивание в сеть передачи данных LAN/WAN граничных коммутаторов WAN' in names %} checked {% endif %}>
                 Встраивание в сеть передачи данных LAN/WAN
               </summary>
             </li>
             <li>
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных коммутаторов WAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных коммутаторов WAN">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных коммутаторов WAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных коммутаторов WAN" {% if 'Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных коммутаторов WAN' in names %} checked {% endif %}>
                 Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
               </summary>
             </li>
             <li>
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS граничных коммутаторов WAN" value="Настройка QoS граничных коммутаторов WAN">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS граничных коммутаторов WAN" value="Настройка QoS граничных коммутаторов WAN" {% if 'Настройка QoS граничных коммутаторов WAN' in names %} checked {% endif %}>
                 Настройка QoS
               </summary>
             </li>
             <li>
               <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети граничных коммутаторов WAN" value="Подключение тестового оборудования и отладка работы системы/сети граничных коммутаторов WAN">
+                <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети граничных коммутаторов WAN" value="Подключение тестового оборудования и отладка работы системы/сети граничных коммутаторов WAN" {% if 'Подключение тестового оборудования и отладка работы системы/сети граничных коммутаторов WAN' in names %} checked {% endif %}>
                 Подключение тестового оборудования и отладка работы системы/сети
               </summary>
             </li>
@@ -232,61 +232,61 @@
     <details style="background-color: rgb(172, 165, 165);">
 
       <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-        <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов серверного сегмента" value="Пуско-наладка коммутаторов серверного сегмента">
+        <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка коммутаторов серверного сегмента" value="Пуско-наладка коммутаторов серверного сегмента" {% if 'Пуско-наладка коммутаторов серверного сегмента' in names %} checked {% endif %}>
         Пуско-наладка коммутаторов серверного сегмента
       </summary> 
       <ul>
         <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов серверного сегмента" value="Установка/обновление программного обеспечения коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения коммутаторов серверного сегмента" value="Установка/обновление программного обеспечения коммутаторов серверного сегмента" {% if 'Установка/обновление программного обеспечения коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Установка/обновление программного обеспечения
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов серверного сегмента" value="Установка и активация лицензий коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий коммутаторов серверного сегмента" value="Установка и активация лицензий коммутаторов серверного сегмента" {% if 'Установка и активация лицензий коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Установка и активация лицензий
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов серверного сегмента" value="Базовая настройка оборудования включая стекирование коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование коммутаторов серверного сегмента" value="Базовая настройка оборудования включая стекирование коммутаторов серверного сегмента" {% if 'Базовая настройка оборудования включая стекирование коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Базовая настройка оборудования включая стекирование
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов серверного сегмента" value="Настройка параметров коммутации/маршрутизации коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации коммутаторов серверного сегмента" value="Настройка параметров коммутации/маршрутизации коммутаторов серверного сегмента" {% if 'Настройка параметров коммутации/маршрутизации коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Настройка параметров коммутации/маршрутизации
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN коммутаторов серверного сегмента" value="Встраивание в сеть передачи данных LAN/WAN коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN коммутаторов серверного сегмента" value="Встраивание в сеть передачи данных LAN/WAN коммутаторов серверного сегмента" {% if 'Встраивание в сеть передачи данных LAN/WAN коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Встраивание в сеть передачи данных LAN/WAN
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов серверного сегмента" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов серверного сегмента" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов серверного сегмента" {% if 'Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов серверного сегмента" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов серверного сегмента" value="Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов серверного сегмента" {% if 'Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...) коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Настройка сетевой безопасности (Port Security/DAI/DHCP Snooping/802.1x ...)
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов серверного сегмента" value="Настройка QoS коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS коммутаторов серверного сегмента" value="Настройка QoS коммутаторов серверного сегмента" {% if 'Настройка QoS коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Настройка QoS
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых серверов и отладка работы системы/сети коммутаторов серверного сегмента" value="Подключение тестовых серверов и отладка работы системы/сети коммутаторов серверного сегмента">
+              <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых серверов и отладка работы системы/сети коммутаторов серверного сегмента" value="Подключение тестовых серверов и отладка работы системы/сети коммутаторов серверного сегмента" {% if 'Подключение тестовых серверов и отладка работы системы/сети коммутаторов серверного сегмента' in names %} checked {% endif %}>
               Подключение тестовых серверов и отладка работы системы/сети
             </summary>
           </li>
@@ -298,61 +298,61 @@
   <details style="background-color: rgb(172, 165, 165);">
 
     <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка граничных маршрутизаторов WAN" value="Пуско-наладка граничных маршрутизаторов WAN">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка граничных маршрутизаторов WAN" value="Пуско-наладка граничных маршрутизаторов WAN" {% if 'Пуско-наладка граничных маршрутизаторов WAN' in names %} checked {% endif %}>
       Пуско-наладка граничных маршрутизаторов WAN
     </summary> 
     <ul>
       <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения граничных маршрутизаторов WAN" value="Установка/обновление программного обеспечения граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения граничных маршрутизаторов WAN" value="Установка/обновление программного обеспечения граничных маршрутизаторов WAN" {% if 'Установка/обновление программного обеспечения граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Установка/обновление программного обеспечения
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий граничных маршрутизаторов WAN" value="Установка и активация лицензий граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий граничных маршрутизаторов WAN" value="Установка и активация лицензий граничных маршрутизаторов WAN" {% if 'Установка и активация лицензий граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Установка и активация лицензий
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование граничных маршрутизаторов WAN" value="Базовая настройка оборудования включая стекирование граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая стекирование граничных маршрутизаторов WAN" value="Базовая настройка оборудования включая стекирование граничных маршрутизаторов WAN" {% if 'Базовая настройка оборудования включая стекирование граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Базовая настройка оборудования включая стекирование
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации граничных маршрутизаторов WAN" value="Настройка параметров коммутации/маршрутизации граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации граничных маршрутизаторов WAN" value="Настройка параметров коммутации/маршрутизации граничных маршрутизаторов WAN" {% if 'Настройка параметров коммутации/маршрутизации граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Настройка параметров коммутации/маршрутизации
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN граничных маршрутизаторов WAN" value="Встраивание в сеть передачи данных LAN/WAN граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN граничных маршрутизаторов WAN" value="Встраивание в сеть передачи данных LAN/WAN граничных маршрутизаторов WAN" {% if 'Встраивание в сеть передачи данных LAN/WAN граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Встраивание в сеть передачи данных LAN/WAN
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных маршрутизаторов WAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных маршрутизаторов WAN" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных маршрутизаторов WAN" {% if 'Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.) граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка голосовых сервисов граничных маршрутизаторов WAN" value="Настройка голосовых сервисов граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка голосовых сервисов граничных маршрутизаторов WAN" value="Настройка голосовых сервисов граничных маршрутизаторов WAN" {% if 'Настройка голосовых сервисов граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Настройка голосовых сервисов
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS граничных маршрутизаторов WAN" value="Настройка QoS граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS граничных маршрутизаторов WAN" value="Настройка QoS граничных маршрутизаторов WAN" {% if 'Настройка QoS граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Настройка QoS
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети граничных маршрутизаторов WAN" value="Подключение тестового оборудования и отладка работы системы/сети граничных маршрутизаторов WAN">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестового оборудования и отладка работы системы/сети граничных маршрутизаторов WAN" value="Подключение тестового оборудования и отладка работы системы/сети граничных маршрутизаторов WAN" {% if 'Подключение тестового оборудования и отладка работы системы/сети граничных маршрутизаторов WAN' in names %} checked {% endif %}>
             Подключение тестового оборудования и отладка работы системы/сети
           </summary>
         </li>
@@ -365,67 +365,67 @@
   <details style="background-color: rgb(172, 165, 165);">
 
     <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка межсетевых экранов" value="Пуско-наладка межсетевых экранов">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка межсетевых экранов" value="Пуско-наладка межсетевых экранов" {% if 'Пуско-наладка межсетевых экранов' in names %} checked {% endif %}>
       Пуско-наладка межсетевых экранов
     </summary> 
     <ul>
       <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения межсетевых экранов" value="Установка/обновление программного обеспечения межсетевых экранов">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения межсетевых экранов" value="Установка/обновление программного обеспечения межсетевых экранов" {% if 'Установка/обновление программного обеспечения межсетевых экранов' in names %} checked {% endif %}>
             Установка/обновление программного обеспечения
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий межсетевых экранов" value="Установка и активация лицензий межсетевых экранов">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий межсетевых экранов" value="Установка и активация лицензий межсетевых экранов" {% if 'Установка и активация лицензий межсетевых экранов' in names %} checked {% endif %}>
             Установка и активация лицензий
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка кластера высокой доступности межсетевых экранов" value="Настройка кластера высокой доступности межсетевых экранов">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка кластера высокой доступности межсетевых экранов" value="Настройка кластера высокой доступности межсетевых экранов" {% if 'Настройка кластера высокой доступности межсетевых экранов' in names %} checked {% endif %}>
             Настройка кластера высокой доступности
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных межсетевых экранов" value="Встраивание в сеть передачи данных межсетевых экранов">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных межсетевых экранов" value="Встраивание в сеть передачи данных межсетевых экранов" {% if 'Встраивание в сеть передачи данных межсетевых экранов' in names %} checked {% endif %}>
             Встраивание в сеть передачи данных
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с AD межсетевых экранов" value="Интеграция с AD межсетевых экранов">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с AD межсетевых экранов" value="Интеграция с AD межсетевых экранов" {% if 'Интеграция с AD межсетевых экранов' in names %} checked {% endif %}>
             Интеграция с AD
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики межсетевого экранирования (stateful firewalling)" value="Настройка политики межсетевого экранирования (stateful firewalling)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики межсетевого экранирования (stateful firewalling)" value="Настройка политики межсетевого экранирования (stateful firewalling)" {% if 'Настройка политики межсетевого экранирования (stateful firewalling)' in names %} checked {% endif %}>
             Настройка политики межсетевого экранирования (stateful firewalling)
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)" value="Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)" value="Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)" {% if 'Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)' in names %} checked {% endif %}>
             Настройка политики предотвращения вторжении и контроля приложений (IPS/IDS)
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)" value="Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)" value="Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)" {% if 'Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)' in names %} checked {% endif %}>
             Настройка политики предотвращения угроз (antivirus/anti-spyware/vulnerability)
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Миграция политик безопасности межсетевых экранов" value="Миграция политик безопасности межсетевых экранов">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Миграция политик безопасности межсетевых экранов" value="Миграция политик безопасности межсетевых экранов" {% if 'Миграция политик безопасности межсетевых экранов' in names %} checked {% endif %}>
             Миграция политик безопасности
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Сбор данных для подготовки политики безопасности" value="Сбор данных для подготовки политики безопасности">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Сбор данных для подготовки политики безопасности" value="Сбор данных для подготовки политики безопасности" {% if 'Сбор данных для подготовки политики безопасности' in names %} checked {% endif %}>
             Сбор данных для подготовки политики безопасности
           </summary>
         </li>
@@ -438,49 +438,49 @@
   <details style="background-color: rgb(172, 165, 165);">
 
     <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка серверных платформ (системы управления/контроля доступа/...)" value="Пуско-наладка серверных платформ (системы управления/контроля доступа/...)">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка серверных платформ (системы управления/контроля доступа/...)" value="Пуско-наладка серверных платформ (системы управления/контроля доступа/...)" {% if 'Пуско-наладка серверных платформ (системы управления/контроля доступа/...)' in names %} checked {% endif %}>
       Пуско-наладка серверных платформ (системы управления/контроля доступа/...)
     </summary> 
     <ul>
       <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения серверных платформ" value="Установка/обновление программного обеспечения серверных платформ">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения серверных платформ" value="Установка/обновление программного обеспечения серверных платформ" {% if 'Установка/обновление программного обеспечения серверных платформ' in names %} checked {% endif %}>
             Установка/обновление программного обеспечения
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий серверных платформ" value="Установка и активация лицензий серверных платформ">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий серверных платформ" value="Установка и активация лицензий серверных платформ" {% if 'Установка и активация лицензий серверных платформ' in names %} checked {% endif %}>
             Установка и активация лицензий
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка программного обеспечения серверных платформ" value="Базовая настройка программного обеспечения серверных платформ">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка программного обеспечения серверных платформ" value="Базовая настройка программного обеспечения серверных платформ" {% if 'Базовая настройка программного обеспечения серверных платформ' in names %} checked {% endif %}>
             Базовая настройка программного обеспечения
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных серверных платформ" value="Встраивание в сеть передачи данных серверных платформ">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных серверных платформ" value="Встраивание в сеть передачи данных серверных платформ" {% if 'Встраивание в сеть передачи данных серверных платформ' in names %} checked {% endif %}>
             Встраивание в сеть передачи данных
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) серверных платформ" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) серверных платформ">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) серверных платформ" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) серверных платформ" {% if 'Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) серверных платформ' in names %} checked {% endif %}>
             Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP)
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка базовых функций системы серверных платформ" value="Настройка базовых функций системы серверных платформ">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка базовых функций системы серверных платформ" value="Настройка базовых функций системы серверных платформ" {% if 'Настройка базовых функций системы серверных платформ' in names %} checked {% endif %}>
             Настройка базовых функций системы
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Отладка работы системы/сети серверных платформ" value="Отладка работы системы/сети серверных платформ">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Отладка работы системы/сети серверных платформ" value="Отладка работы системы/сети серверных платформ" {% if 'Отладка работы системы/сети серверных платформ' in names %} checked {% endif %}>
             Отладка работы системы/сети
           </summary>
         </li>
@@ -493,92 +493,92 @@
   <details style="background-color: rgb(172, 165, 165);">
 
     <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка WLAN (централизованный контроллер)" value="Пуско-наладка WLAN (централизованный контроллер)">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка WLAN (централизованный контроллер)" value="Пуско-наладка WLAN (централизованный контроллер)" {% if 'Пуско-наладка WLAN (централизованный контроллер)' in names %} checked {% endif %}>
       Пуско-наладка WLAN (централизованный контроллер)
     </summary> 
     <ul>
       <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения контроллеров WLAN (централизованный контроллер)" value="Установка/обновление программного обеспечения контроллеров WLAN (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения контроллеров WLAN (централизованный контроллер)" value="Установка/обновление программного обеспечения контроллеров WLAN (централизованный контроллер)" {% if 'Установка/обновление программного обеспечения контроллеров WLAN (централизованный контроллер)' in names %} checked {% endif %}>
             Установка/обновление программного обеспечения контроллеров WLAN
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий (централизованный контроллер)" value="Установка и активация лицензий (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий (централизованный контроллер)" value="Установка и активация лицензий (централизованный контроллер)" {% if 'Установка и активация лицензий (централизованный контроллер)' in names %} checked {% endif %}>
             Установка и активация лицензий
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая кластеризацию (централизованный контроллер)" value="Базовая настройка оборудования включая кластеризацию (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая кластеризацию (централизованный контроллер)" value="Базовая настройка оборудования включая кластеризацию (централизованный контроллер)" {% if 'Базовая настройка оборудования включая кластеризацию (централизованный контроллер)' in names %} checked {% endif %}>
             Базовая настройка оборудования включая кластеризацию
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации (централизованный контроллер)" value="Настройка параметров коммутации/маршрутизации (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации (централизованный контроллер)" value="Настройка параметров коммутации/маршрутизации (централизованный контроллер)" {% if 'Настройка параметров коммутации/маршрутизации (централизованный контроллер)' in names %} checked {% endif %}>
             Настройка параметров коммутации/маршрутизации
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN (централизованный контроллер)" value="Встраивание в сеть передачи данных LAN/WAN (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN (централизованный контроллер)" value="Встраивание в сеть передачи данных LAN/WAN (централизованный контроллер)" {% if 'Встраивание в сеть передачи данных LAN/WAN (централизованный контроллер)' in names %} checked {% endif %}>
             Встраивание в сеть передачи данных LAN/WAN
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (централизованный контроллер)" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (централизованный контроллер)" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (централизованный контроллер)" {% if 'Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (централизованный контроллер)' in names %} checked {% endif %}>
             Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение точек доступа к контроллеру (централизованный контроллер)" value="Подключение точек доступа к контроллеру (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение точек доступа к контроллеру (централизованный контроллер)" value="Подключение точек доступа к контроллеру (централизованный контроллер)" {% if 'Подключение точек доступа к контроллеру (централизованный контроллер)' in names %} checked {% endif %}>
             Подключение точек доступа к контроллеру
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Отладка и обновление программного обеспечения точек доступа (централизованный контроллер)" value="Отладка и обновление программного обеспечения точек доступа (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Отладка и обновление программного обеспечения точек доступа (централизованный контроллер)" value="Отладка и обновление программного обеспечения точек доступа (централизованный контроллер)" {% if 'Отладка и обновление программного обеспечения точек доступа (централизованный контроллер)' in names %} checked {% endif %}>
             Отладка и обновление программного обеспечения точек доступа
           </summary>
         </li>
 
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Предварительное радиообследование (централизованный контроллер)" value="Предварительное радиообследование (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Предварительное радиообследование (централизованный контроллер)" value="Предварительное радиообследование (централизованный контроллер)" {% if 'Предварительное радиообследование (централизованный контроллер)' in names %} checked {% endif %}>
             Предварительное радиообследование
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров беспроводной сети (централизованный контроллер)" value="Настройка параметров беспроводной сети (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров беспроводной сети (централизованный контроллер)" value="Настройка параметров беспроводной сети (централизованный контроллер)" {% if 'Настройка параметров беспроводной сети (централизованный контроллер)' in names %} checked {% endif %}>
             Настройка параметров беспроводной сети
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров аутентификации пользователей (централизованный контроллер)" value="Настройка параметров аутентификации пользователей (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров аутентификации пользователей (централизованный контроллер)" value="Настройка параметров аутентификации пользователей (централизованный контроллер)" {% if 'Настройка параметров аутентификации пользователей (централизованный контроллер)' in names %} checked {% endif %}>
             Настройка параметров аутентификации пользователей
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS (централизованный контроллер)" value="Настройка QoS (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS (централизованный контроллер)" value="Настройка QoS (централизованный контроллер)" {% if 'Настройка QoS (централизованный контроллер)' in names %} checked {% endif %}>
             Настройка QoS
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Финальное радиообследование (централизованный контроллер)" value="Финальное радиообследование (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Финальное радиообследование (централизованный контроллер)" value="Финальное радиообследование (централизованный контроллер)" {% if 'Финальное радиообследование (централизованный контроллер)' in names %} checked {% endif %}>
             Финальное радиообследование
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети (централизованный контроллер)" value="Подключение тестовых пользователей и отладка работы системы/сети (централизованный контроллер)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети (централизованный контроллер)" value="Подключение тестовых пользователей и отладка работы системы/сети (централизованный контроллер)" {% if 'Подключение тестовых пользователей и отладка работы системы/сети (централизованный контроллер)' in names %} checked {% endif %}>
             Подключение тестовых пользователей и отладка работы системы/сети
           </summary>
         </li>
@@ -590,91 +590,91 @@
   <details style="background-color: rgb(172, 165, 165);">
 
     <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка WLAN (Mobility Express)" value="Пуско-наладка WLAN (Mobility Express)">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка WLAN (Mobility Express)" value="Пуско-наладка WLAN (Mobility Express)" {% if 'Пуско-наладка WLAN (Mobility Express)' in names %} checked {% endif %}>
       Пуско-наладка WLAN (Mobility Express)
     </summary> 
     <ul>
       <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения точек доступа (Mobility Express)" value="Установка/обновление программного обеспечения точек доступа (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка/обновление программного обеспечения точек доступа (Mobility Express)" value="Установка/обновление программного обеспечения точек доступа (Mobility Express)" {% if 'Установка/обновление программного обеспечения точек доступа (Mobility Express)' in names %} checked {% endif %}>
             Установка/обновление программного обеспечения точек доступа
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка контроллера на точках доступа (Mobility Express)" value="Настройка контроллера на точках доступа (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка контроллера на точках доступа (Mobility Express)" value="Настройка контроллера на точках доступа (Mobility Express)" {% if 'Настройка контроллера на точках доступа (Mobility Express)' in names %} checked {% endif %}>
             Настройка контроллера на точках доступа
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий (Mobility Express)" value="Установка и активация лицензий (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий (Mobility Express)" value="Установка и активация лицензий (Mobility Express)" {% if 'Установка и активация лицензий (Mobility Express)' in names %} checked {% endif %}>
             Установка и активация лицензий
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая кластеризацию (Mobility Express)" value="Базовая настройка оборудования включая кластеризацию (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка оборудования включая кластеризацию (Mobility Express)" value="Базовая настройка оборудования включая кластеризацию (Mobility Express)" {% if 'Базовая настройка оборудования включая кластеризацию (Mobility Express)' in names %} checked {% endif %}>
             Базовая настройка оборудования включая кластеризацию
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации (Mobility Express)" value="Настройка параметров коммутации/маршрутизации (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров коммутации/маршрутизации (Mobility Express)" value="Настройка параметров коммутации/маршрутизации (Mobility Express)" {% if 'Настройка параметров коммутации/маршрутизации (Mobility Express)' in names %} checked {% endif %}>
             Настройка параметров коммутации/маршрутизации
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN (Mobility Express)" value="Встраивание в сеть передачи данных LAN/WAN (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Встраивание в сеть передачи данных LAN/WAN (Mobility Express)" value="Встраивание в сеть передачи данных LAN/WAN (Mobility Express)" {% if 'Встраивание в сеть передачи данных LAN/WAN (Mobility Express)' in names %} checked {% endif %}>
             Встраивание в сеть передачи данных LAN/WAN
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (Mobility Express)" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (Mobility Express)" value="Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (Mobility Express)" {% if 'Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA/SMTP) (Mobility Express)' in names %} checked {% endif %}>
             Интеграция с инфраструктурными сервисами (NTP/DNS/Syslog/SNMP/AAA и т. п.)
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение точек доступа к контроллеру (Mobility Express)" value="Подключение точек доступа к контроллеру (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение точек доступа к контроллеру (Mobility Express)" value="Подключение точек доступа к контроллеру (Mobility Express)" {% if 'Подключение точек доступа к контроллеру (Mobility Express)' in names %} checked {% endif %}>
             Подключение точек доступа к контроллеру
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Предварительное радиообследование (Mobility Express)" value="Предварительное радиообследование (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Предварительное радиообследование (Mobility Express)" value="Предварительное радиообследование (Mobility Express)" {% if 'Предварительное радиообследование (Mobility Express)' in names %} checked {% endif %}>
             Предварительное радиообследование
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров беспроводной сети (Mobility Express)" value="Настройка параметров беспроводной сети (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров беспроводной сети (Mobility Express)" value="Настройка параметров беспроводной сети (Mobility Express)" {% if 'Настройка параметров беспроводной сети (Mobility Express)' in names %} checked {% endif %}>
             Настройка параметров беспроводной сети
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров аутентификации пользователей (Mobility Express)" value="Настройка параметров аутентификации пользователей (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка параметров аутентификации пользователей (Mobility Express)" value="Настройка параметров аутентификации пользователей (Mobility Express)" {% if 'Настройка параметров аутентификации пользователей (Mobility Express)' in names %} checked {% endif %}>
             Настройка параметров аутентификации пользователей
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS (Mobility Express)" value="Настройка QoS (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка QoS (Mobility Express)" value="Настройка QoS (Mobility Express)" {% if 'Настройка QoS (Mobility Express)' in names %} checked {% endif %}>
             Настройка QoS
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Финальное радиообследование (Mobility Express)" value="Финальное радиообследование (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Финальное радиообследование (Mobility Express)" value="Финальное радиообследование (Mobility Express)" {% if 'Финальное радиообследование (Mobility Express)' in names %} checked {% endif %}>
             Финальное радиообследование
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети (Mobility Express)" value="Подключение тестовых пользователей и отладка работы системы/сети (Mobility Express)">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых пользователей и отладка работы системы/сети (Mobility Express)" value="Подключение тестовых пользователей и отладка работы системы/сети (Mobility Express)" {% if 'Подключение тестовых пользователей и отладка работы системы/сети (Mobility Express)' in names %} checked {% endif %}>
             Подключение тестовых пользователей и отладка работы системы/сети
           </summary>
         </li>
@@ -685,73 +685,73 @@
   <details style="background-color: rgb(172, 165, 165);">
 
     <summary style="margin-left:40px; font-weight:normal; cursor: pointer;">
-      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка системы VMware NSX" value="Пуско-наладка системы VMware NSX">
+      <input type="checkbox" style="margin-right:5px;" class="list-item-checkbox" name="Пуско-наладка системы VMware NSX" value="Пуско-наладка системы VMware NSX" {% if 'Пуско-наладка системы VMware NSX' in names %} checked {% endif %}>
       Пуско-наладка системы VMware NSX
     </summary> 
     <ul>
       <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и первичная настройка NSX Manager системы VMware NSX" value="Установка и первичная настройка NSX Manager системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и первичная настройка NSX Manager системы VMware NSX" value="Установка и первичная настройка NSX Manager системы VMware NSX" {% if 'Установка и первичная настройка NSX Manager системы VMware NSX' in names %} checked {% endif %}>
             Установка и первичная настройка NSX Manager
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий NSX системы VMware NSX" value="Установка и активация лицензий NSX системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и активация лицензий NSX системы VMware NSX" value="Установка и активация лицензий NSX системы VMware NSX" {% if 'Установка и активация лицензий NSX системы VMware NSX' in names %} checked {% endif %}>
             Установка и активация лицензий NSX
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и первичная настройка NSX Edge системы VMware NSX" value="Установка и первичная настройка NSX Edge системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка и первичная настройка NSX Edge системы VMware NSX" value="Установка и первичная настройка NSX Edge системы VMware NSX" {% if 'Установка и первичная настройка NSX Edge системы VMware NSX' in names %} checked {% endif %}>
             Установка и первичная настройка NSX Edge
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка ПО NSX на гипервизоры системы VMware NSX" value="Установка ПО NSX на гипервизоры системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка ПО NSX на гипервизоры системы VMware NSX" value="Установка ПО NSX на гипервизоры системы VMware NSX" {% if 'Установка ПО NSX на гипервизоры системы VMware NSX' in names %} checked {% endif %}>
             Установка ПО NSX на гипервизоры
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка ПО NSX на BMH-сервер системы VMware NSX" value="Установка ПО NSX на BMH-сервер системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Установка ПО NSX на BMH-сервер системы VMware NSX" value="Установка ПО NSX на BMH-сервер системы VMware NSX" {% if 'Установка ПО NSX на BMH-сервер системы VMware NSX' in names %} checked {% endif %}>
             Установка ПО NSX на BMH-сервер
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay) системы VMware NSX" value="Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay) системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay) системы VMware NSX" value="Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay) системы VMware NSX" {% if 'Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay) системы VMware NSX' in names %} checked {% endif %}>
             Базовая конфигурация NSX (Profile/Pool/Transport Zone/Overlay)
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Cоздание сегментов и маршрутизаторов T0/T1 системы VMware NSX" value="Cоздание сегментов и маршрутизаторов T0/T1 системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Cоздание сегментов и маршрутизаторов T0/T1 системы VMware NSX" value="Cоздание сегментов и маршрутизаторов T0/T1 системы VMware NSX" {% if 'Cоздание сегментов и маршрутизаторов T0/T1 системы VMware NSX' in names %} checked {% endif %}>
             Cоздание сегментов и маршрутизаторов T0/T1
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка Multi-Site/Federation системы VMware NSX" value="Настройка Multi-Site/Federation системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Настройка Multi-Site/Federation системы VMware NSX" value="Настройка Multi-Site/Federation системы VMware NSX" {% if 'Настройка Multi-Site/Federation системы VMware NSX' in names %} checked {% endif %}>
             Настройка Multi-Site/Federation
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с физической сетью системы VMware NSX" value="Интеграция с физической сетью системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Интеграция с физической сетью системы VMware NSX" value="Интеграция с физической сетью системы VMware NSX" {% if 'Интеграция с физической сетью системы VMware NSX' in names %} checked {% endif %}>
             Интеграция с физической сетью
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка параметров межсетевого экранирования на DFW системы VMware NSX" value="Базовая настройка параметров межсетевого экранирования на DFW системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Базовая настройка параметров межсетевого экранирования на DFW системы VMware NSX" value="Базовая настройка параметров межсетевого экранирования на DFW системы VMware NSX" {% if 'Базовая настройка параметров межсетевого экранирования на DFW системы VMware NSX' in names %} checked {% endif %}>
             Базовая настройка параметров межсетевого экранирования на DFW
           </summary>
         </li>
         <li>
           <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">
-            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых серверных сегментов, отладка работы системы/сети системы VMware NSX" value="Подключение тестовых серверных сегментов, отладка работы системы/сети системы VMware NSX">
+            <input type="checkbox" style="margin-right:20px;" class="list-item-checkbox" name="Подключение тестовых серверных сегментов, отладка работы системы/сети системы VMware NSX" value="Подключение тестовых серверных сегментов, отладка работы системы/сети системы VMware NSX" {% if 'Подключение тестовых серверных сегментов, отладка работы системы/сети системы VMware NSX' in names %} checked {% endif %}>
             Подключение тестовых серверных сегментов, отладка работы системы/сети
           </summary>
         </li>
