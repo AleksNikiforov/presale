@@ -12,17 +12,17 @@
         <ul>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">  
-              <input style="width: 218px; text-align: left;" type="text" id="Наименование подрядчика" name="Наименование подрядчика" placeholder="Наименование подрядчика" value="" required/>
+              <input style="width: 218px; text-align: left;" type="text" id="Наименование подрядчика" name="Наименование подрядчика" placeholder="Наименование подрядчика" required value="{{ subcontractor_name.0.subcontract_name }}"/>
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">  
-              <input style="width: 218px; text-align: left;" type="text" id="Наименование работ" name="Наименование работ" placeholder="Наименование работ" value="" required/>
+              <input style="width: 218px; text-align: left;" type="text" id="Наименование работ" name="Наименование работ" placeholder="Наименование работ" required value="{{ subcontractor_jobs.0.subcontract_jobs }}"/>
             </summary>
           </li>
           <li>
             <summary style="margin-left:60px; font-weight:normal; cursor: pointer;">  
-              <input style="width: 218px; text-align: left;" type="number" id="Стоимость" name="Стоимость" placeholder="Стоимость с НДС, руб" value="" required/>
+              <input style="width: 218px; text-align: left;" type="number" id="Стоимость" name="Стоимость" placeholder="Стоимость с НДС, руб" required value="{{ subcontractor_price.0.subcontract_price }}"/>
             </summary>
           </li>
         </ul>

@@ -25,6 +25,21 @@ class SubcontractorListView(LoginRequiredMixin, ListView):
 
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
+    
+    def get(self, request, *args, **kwargs):
+        # Fetch the Subcontractor associated with the current user
+        subcontractors = Subcontractor.objects.filter(author=request.user)
+        
+        if subcontractors.exists():
+            # Subcontractor exist, pass them to the template context
+            subcontractor_name = subcontractors.values('subcontract_name')
+            subcontractor_jobs = subcontractors.values('subcontract_jobs')
+            subcontractor_price = subcontractors.values('subcontract_price')
+            context = {'subcontractor_name': subcontractor_name, 'subcontractor_jobs':subcontractor_jobs, 'subcontractor_price':subcontractor_price}
+            return render(request, 'subcontractor/subcontractor_list.html', context)
+        else:
+            # No Subcontractor exist, render the fallback template
+            return render(request, 'subcontractor/subcontractor_list.html')
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
