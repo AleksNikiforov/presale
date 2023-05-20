@@ -23,6 +23,22 @@ class BusinessTripListView(LoginRequiredMixin, ListView):
 
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
+    
+    def get(self, request, *args, **kwargs):
+        # Fetch the businesstrip associated with the current user
+        businesstrip = BusinessTrip.objects.filter(author=request.user)
+        
+        if businesstrip.exists():
+            # Subcontractor exist, pass them to the template context
+            duration_trip = businesstrip.values('duration_trip')
+            ticket_cost = businesstrip.values('ticket_cost')
+            hotel_cost = businesstrip.values('hotel_cost')
+            daily_allowance = businesstrip.values('daily_allowance')
+            context = {'duration_trip': duration_trip, 'ticket_cost':ticket_cost, 'hotel_cost':hotel_cost, 'daily_allowance':daily_allowance}
+            return render(request, 'businesstrip/businesstrip_list.html', context)
+        else:
+            # No businesstrip exist, render the fallback template
+            return render(request, 'businesstrip/businesstrip_list.html')
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
