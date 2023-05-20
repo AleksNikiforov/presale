@@ -25,6 +25,19 @@ class OtherListView(LoginRequiredMixin, ListView):
 
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
+    
+    def get(self, request, *args, **kwargs):
+        # Fetch the Other associated with the current user
+        other = Other.objects.filter(author=request.user)
+        
+        if other.exists():
+            # Other exist, pass them to the template context
+            total_price = other.values('total_price')
+            context = {'total_price': total_price}
+            return render(request, 'other/other_list.html', context)
+        else:
+            # No Other exist, render the fallback template
+            return render(request, 'other/other_list.html')
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':
