@@ -23,6 +23,31 @@ class RatesListView(LoginRequiredMixin, ListView):
 
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
+    
+    def get(self, request, *args, **kwargs):
+        # Fetch the Rates associated with the current user
+        rates = Rates.objects.filter(author=request.user)
+        
+        if rates.exists():
+            # Rates exist, pass them to the template context
+            person = rates.values('person')
+            engineer_cost = rates.values('engineer_cost')
+            architect_cost = rates.values('architect_cost')
+            manager_cost = rates.values('manager_cost')
+            tech_writer_cost = rates.values('tech_writer_cost')
+            manager_coef = rates.values('manager_coef')
+            tech_writer_coef = rates.values('tech_writer_coef')
+            context = {'person': person,
+                       'engineer_cost':engineer_cost,
+                       'architect_cost':architect_cost,
+                       'manager_cost':manager_cost, 
+                       'tech_writer_cost':tech_writer_cost,
+                       'manager_coef':manager_coef,
+                       'tech_writer_coef':tech_writer_coef}
+            return render(request, 'rates/rates_list.html', context)
+        else:
+            # No Rates exist, render the fallback template
+            return render(request, 'rates/rates_list.html')
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST':

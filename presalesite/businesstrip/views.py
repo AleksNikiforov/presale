@@ -29,7 +29,7 @@ class BusinessTripListView(LoginRequiredMixin, ListView):
         businesstrip = BusinessTrip.objects.filter(author=request.user)
         
         if businesstrip.exists():
-            # Subcontractor exist, pass them to the template context
+            # businesstrip exist, pass them to the template context
             duration_trip = businesstrip.values('duration_trip')
             ticket_cost = businesstrip.values('ticket_cost')
             hotel_cost = businesstrip.values('hotel_cost')
