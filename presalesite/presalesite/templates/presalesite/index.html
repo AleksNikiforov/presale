@@ -8,18 +8,19 @@
 
 	  
 
-      <div class="intro__content">
+      <div class="intro__content" style="line-height: 0.1;">
             <div class="container">
 				<div class="visible">
 					{% for message in messages %}
 					<h3 class="intro_1" style="font-size: 30px; color: yellow; padding: 10px;">{{ message }}</h3>
 				  	{% endfor %}
-					<h3 class="intro_1" style="font-size: 30px;">Инструкция для presale-инженера и менеджера проекта:</h3>
-					<h3 class="intro_1" style="font-size: 30px;">1. Укажите сложность проекта на вкладке "Rates".</h3>
-					<h3 class="intro_1" style="font-size: 30px;">2. На каждой вкладке отметьте типы работ и их сроки выполнения.</h3>
-					<h3 class="intro_1" style="font-size: 30px;">3. При необходимости заполнить данные по командировке и о подрядчике. </h3>
-					<h3 class="intro_1" style="font-size: 30px;">4. На вкладке "Output" проверьте содержимое КП.</h3>
-					<h3 class="intro_1" style="font-size: 30px;">5. Скачайте готовое КП в формате Excel.</h3>
+					<h3 class="intro_1" style="font-size: 20px; margin-bottom: 5px;">Инструкция для presale-инженера и менеджера проекта:</h3>
+					<h3 class="intro_1" style="font-size: 20px; margin-bottom: 5px;">1. Укажите сложность и соответствующие коэффициенты проекта на вкладке "Rates" (Для того чтобы корректно указать коэффициенты можно воспользоваться методологией расчета трудозатрат).
+					<a href="{% static 'docs/Методология расчета трудозатрат специалистов ПрО ДИС.docx' %}" download><button class="btn btn-secondary" style="display: inline-block;">Скачать методологию расчета трудозатрат</button></a>
+					<h3 class="intro_1" style="font-size: 20px; margin-bottom: 5px;">2. На каждой вкладке отметьте типы работ и их сроки выполнения.</h3>
+					<h3 class="intro_1" style="font-size: 20px; margin-bottom: 5px;">3. При необходимости заполнить данные по командировке и о подрядчике. </h3>
+					<h3 class="intro_1" style="font-size: 20px; margin-bottom: 5px;">4. На вкладке "Output" проверьте содержимое КП.</h3>
+					<h3 class="intro_1" style="font-size: 20px; margin-bottom: 5px;">5. Скачайте готовое КП в формате Excel.</h3>
 				</div>
 			</div>
       </div>
