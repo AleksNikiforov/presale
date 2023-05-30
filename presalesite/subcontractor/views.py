@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView, CreateView, DeleteView
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
-from .models import *
+from .models import Subcontractor
 from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -23,45 +23,21 @@ class SubcontractorListView(LoginRequiredMixin, ListView):
     form_class = CustomForm
 
 
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
-    
-    def get(self, request, *args, **kwargs):
-        # Fetch the Subcontractor associated with the current user
-        subcontractors = Subcontractor.objects.filter(author=request.user)
-        
-        if subcontractors.exists():
-            # Subcontractor exist, pass them to the template context
-            subcontractor_name = subcontractors.values('subcontract_name')
-            subcontractor_jobs = subcontractors.values('subcontract_jobs')
-            subcontractor_price = subcontractors.values('subcontract_price')
-            context = {'subcontractor_name': subcontractor_name, 'subcontractor_jobs':subcontractor_jobs, 'subcontractor_price':subcontractor_price}
-            return render(request, 'subcontractor/subcontractor_list.html', context)
-        else:
-            # No Subcontractor exist, render the fallback template
-            return render(request, 'subcontractor/subcontractor_list.html')
-
-    def post(self, request, *args, **kwargs):
-        if request.method == 'POST':
-            data = request.POST
-            data = dict(data)
-            data.pop("csrfmiddlewaretoken")  
-            Subcontractor.objects.filter(author=request.user).delete()
-            cat = Subcontractor(author = request.user,
-                        subcontract_name = data['Наименование подрядчика'][0], 
-                        subcontract_jobs = data['Наименование работ'][0], 
-                        subcontract_price = data['Стоимость'][0],
-                        )
-            cat.save()
-            return redirect(reverse_lazy('Final_Subcontractor'))
+class SubcontractorUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = '/registration/login/'
+    model = Subcontractor
+    form_class = CustomForm
+    success_url = '/subcontractor/'
 
 
-def final_list(request):
-    perechen = Subcontractor.objects.filter(author=request.user)
-    return render(request, 'subcontractor/subcontractor_final.html', {'perechen': perechen})
+class SubcontractorCreateView(LoginRequiredMixin, CreateView):
+    login_url = '/registration/login/'
+    model = Subcontractor
+    form_class = CustomForm
+    success_url = '/subcontractor/'
 
 
-def delete(request):
-    Subcontractor.objects.filter(author=request.user).delete()
-    return redirect(reverse_lazy('Subcontractor'))
-
+class SubcontractorDeleteView(LoginRequiredMixin, DeleteView):
+    login_url = '/registration/login/'
+    model = Subcontractor
+    success_url = '/subcontractor/'

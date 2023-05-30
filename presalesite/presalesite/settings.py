@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'migration',
     'other_jobs',
     'subcontractor',
-    'subcontractor_new',
     'other',
     'businesstrip',
 ]
