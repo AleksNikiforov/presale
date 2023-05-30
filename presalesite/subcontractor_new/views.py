@@ -38,5 +38,6 @@ class Subcontractor_newCreateView(LoginRequiredMixin, CreateView):
 
 
 class Subcontractor_newDeleteView(LoginRequiredMixin, DeleteView):
+    login_url = '/registration/login/'
     model = Subcontractor_new
     success_url = '/subcontractor_new/'

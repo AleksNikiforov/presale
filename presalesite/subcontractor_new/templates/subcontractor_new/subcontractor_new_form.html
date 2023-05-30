@@ -4,10 +4,14 @@
 
       <form method="POST" onsubmit="return validateForm();">
         {% csrf_token %}
-            Необходимо указать наименование подрядичка, работы проводимые подрядчиком и стоимость работ: 
+        <details style="margin-top:25px;">
+            <summary style="margin-left:10px; font-weight:900; cursor: pointer;"
+            >Необходимо указать наименование подрядичка, работы проводимые подрядчиком и стоимость работ: 
+            </summary>
+
             {% for field in form %}
             <hr>
-            <p>
+            <p style="margin-left:20px;"> 
                 {{field.label}}
                 {{field}}
                 {% if field.errors %}
@@ -22,7 +26,8 @@
                 {% endif %}
             </p>
         {% endfor %}
-	  <button style="margin-left:50px;" type="submit" class="btn btn-primary">Сохранить</button>
+	  <button style="margin-left:20px;" type="submit" class="btn btn-primary">Сохранить</button>
+    </details>
 	</form>
 
 </details>

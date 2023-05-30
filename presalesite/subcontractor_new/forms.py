@@ -9,10 +9,15 @@ class CustomForm(forms.ModelForm):
         labels = {
             'subcontract_name': 'Наименование подрядчика',
             'subcontract_jobs': 'Наименование работ',
-            'subcontract_price': 'Стоимость работ',
+            'subcontract_price': 'Стоимость с НДС, руб',
         }
+        # widgets = {
+        #     'subcontract_name': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'subcontract_jobs': forms.TextInput(attrs={'class': 'form-control'}),
+        #     'subcontract_price': forms.NumberInput(attrs={'class': 'form-control'}),
+        # }
         widgets = {
-            'subcontract_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'subcontract_jobs': forms.TextInput(attrs={'class': 'form-control'}),
-            'subcontract_price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'subcontract_name': forms.TextInput(attrs={'class': 'form-control', 'style': 'width: 300px;'}),
+            'subcontract_jobs': forms.TextInput(attrs={'class': 'form-control', 'style': 'width: 300px;'}),
+            'subcontract_price': forms.NumberInput(attrs={'class': 'form-control', 'style': 'width: 300px;'}),
         }

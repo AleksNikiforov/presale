@@ -13,6 +13,7 @@ from accept.models import Accept
 from migration.models import Migration
 from other_jobs.models import Other_jobs
 from subcontractor.models import Subcontractor
+from subcontractor_new.models import Subcontractor_new
 from other.models import Other
 from businesstrip.models import BusinessTrip
 from .forms import *
@@ -33,6 +34,7 @@ def delete_all(request):
     Migration.objects.filter(author=request.user).delete()
     Other_jobs.objects.filter(author=request.user).delete()
     Subcontractor.objects.filter(author=request.user).delete()
+    Subcontractor_new.objects.filter(author=request.user).delete()
     Other.objects.filter(author=request.user).delete()
     BusinessTrip.objects.filter(author=request.user).delete()
 
@@ -54,10 +56,11 @@ def final_list(request):
     migration = Migration.objects.filter(author=request.user)
     other_jobs = Other_jobs.objects.filter(author=request.user)
     subcontractor = Subcontractor.objects.filter(author=request.user)
+    subcontractor_new = Subcontractor_new.objects.filter(author=request.user)
     other = Other.objects.filter(author=request.user)
     businesstrip = BusinessTrip.objects.filter(author=request.user)
     #создание списка по которому пойдет цикл для отображения всех введенных данных
-    all_fields = [design, examination, poc, install, commissioning, accept, migration, other_jobs, subcontractor, other, businesstrip]
+    all_fields = [design, examination, poc, install, commissioning, accept, migration, other_jobs, subcontractor, subcontractor_new, other, businesstrip]
     #создание переменных для общей суммы
     all_person_days = 0
     all_tech_writer_days = 0
