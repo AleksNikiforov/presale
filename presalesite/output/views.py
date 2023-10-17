@@ -137,7 +137,8 @@ def final_list(request):
                     tech_writer_days = round(tech_writer_coef * person_days, 1)
                 #подготовка к расчету суммы с НДС, берем стоимость инженер/архитектор, техпис, менеджер и умножаем на количество рабочих дней
                 manager_days = round(manager_coef * person_days, 1)
-                summa_s_nds = (person_cost * person_days + tech_writer_cost * tech_writer_days + manager_cost * manager_days) * 1.2
+                #ндс суммарное считаем =1 а не 1.2 так как ндс учитывается в коэффициентах исполнителей
+                summa_s_nds = (person_cost * person_days + tech_writer_cost * tech_writer_days + manager_cost * manager_days) * 1
                 #длительность проекта
                 duration = person_days * 150 / 100
                 #добавляем все данные в список для передачи в html
